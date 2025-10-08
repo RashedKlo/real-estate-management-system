@@ -14,7 +14,7 @@ namespace RealEstateManagement.Services.Interfaces
         Task<OperationResult<ClientUpdateResponseDto>> UpdateClientAsync(ClientUpdateRequestDto dto);
         Task<OperationResult<ClientDeleteResponseDto>> DeleteClientAsync(ClientDeleteRequestDto dto);
         Task<OperationResult<ClientGetResponseDto>> GetClientAsync(ClientGetRequestDto dto);
-        Task<OperationResult<ClientPropertiesGetResponseDto>> ValidateGetClientProperties(ClientPropertiesGetRequestDto dto);
+        Task<OperationResult<ClientPropertiesGetResponseDto>> GetClientPropertiesAsync(ClientPropertiesGetRequestDto dto);
         Task<OperationResult<ClientsGetResponseDto>> GetClientsAsync(ClientsGetRequestDto dto);
     }
 }

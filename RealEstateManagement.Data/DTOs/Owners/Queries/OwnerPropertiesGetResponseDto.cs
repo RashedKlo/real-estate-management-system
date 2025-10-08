@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using RealEstateManagement.Data.Models;
 namespace RealEstateManagement.Data.DTOs.Owners.Queries
 {
     public class OwnerPropertiesGetResponseDto

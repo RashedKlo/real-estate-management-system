@@ -15,10 +15,7 @@ namespace RealEstateManagement.Data.Models
         public DateTime TransactionDate { get; set; }
         public decimal Amount { get; set; }
 
-        // Client Info
-        public string ClientFullName { get; set; }
-        public string ClientPhoneNumber { get; set; }
-        public string ClientAddress { get; set; }
+     
 
         // Property Info
         public string PropertyLocation { get; set; }

@@ -10,7 +10,7 @@ using RealEstateManagement.Data.Results;
 using RealEstateManagement.Data.Settings;
 using RealEstateManagement.Data.Repositories.Client.Helpers;
 
-namespace RealEstateManagement.Data.Repositories.ClientProperties.Queries
+namespace RealEstateManagement.Data.Repositories.Client.Queries
 {
     public class GetClientPropertiesQuery
     {
@@ -98,115 +98,89 @@ namespace RealEstateManagement.Data.Repositories.ClientProperties.Queries
             }
 
             List<ClientPropertyModel> properties = new List<ClientPropertyModel>();
-            string status = "ERROR";
-            string message = "Client properties retrieval completed";
-            int currentPage = 0, pageSize = 0, totalRecords = 0, totalPages = 0;
+            string status = "SUCCESS";
+            string message = "Client properties retrieved successfully";
+            int currentPage = page, pageSize = limit, totalRecords = 0, totalPages = 0;
+
+            string clientFullName = string.Empty;
+            string clientPhoneNumber = string.Empty;
+            string clientAddress = string.Empty;
 
             try
             {
-                bool isFirstRow = true;
+                bool hasRows = false;
 
                 while (await reader.ReadAsync())
                 {
-                    // Debug logging for first row
-                    if (isFirstRow)
+                    hasRows = true;
+
+                    // Check if this is an error row (ClientPropertyId will be NULL in error case)
+                    var clientPropertyId = reader.GetValueOrDefault<int?>("ClientPropertyId");
+
+                    if (clientPropertyId.HasValue)
                     {
-                        logger.LogInformation("===== FIRST ROW DEBUG =====");
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            string colName = reader.GetName(i);
-                            object colValue = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                            logger.LogInformation("Column[{Index}] '{Name}' = '{Value}'", i, colName, colValue);
-                        }
-                        logger.LogInformation("===== END FIRST ROW DEBUG =====");
+                        // This is a valid property row - map it
+                        var property = ClientMapper.MapClientPropertyFromReader(reader);
+                        properties.Add(property);
                     }
 
-                    // Get metadata from first row
-                    if (properties.Count == 0)
-                    {
-                        currentPage = reader.GetValueOrDefault<int>("CurrentPage");
-                        pageSize = reader.GetValueOrDefault<int>("PageSize");
-                        totalRecords = reader.GetValueOrDefault<int>("TotalRecords");
-                        totalPages = reader.GetValueOrDefault<int>("TotalPages");
+                    // Read client info and pagination from every row (they're repeated)
+                    // In case of error row or success row, these fields are always present
+                    clientFullName = reader.GetValueOrDefault<string>("ClientFullName") ?? string.Empty;
+                    clientPhoneNumber = reader.GetValueOrDefault<string>("ClientPhoneNumber") ?? string.Empty;
+                    clientAddress = reader.GetValueOrDefault<string>("ClientAddress") ?? string.Empty;
 
-                        // Get Status with detailed logging
-                        string rawStatus = null;
-                        try
-                        {
-                            int statusOrdinal = reader.GetOrdinal("Status");
-                            if (!reader.IsDBNull(statusOrdinal))
-                            {
-                                rawStatus = reader.GetString(statusOrdinal);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.LogError(ex, "Error reading Status column");
-                        }
+                    currentPage = reader.GetValueOrDefault<int>("CurrentPage");
+                    pageSize = reader.GetValueOrDefault<int>("PageSize");
+                    totalRecords = reader.GetValueOrDefault<int>("TotalRecords");
+                    totalPages = (int)(totalRecords / limit);
 
-                        status = rawStatus?.Trim() ?? "ERROR";
-                        message = reader.GetValueOrDefault<string>("Message")?.Trim() ?? "Client properties retrieval completed";
-
-                        logger.LogInformation("Metadata - RawStatus: '{Raw}', Status: '{Status}', Message: '{Message}', TotalRecords: {TotalRecords}",
-                            rawStatus, status, message, totalRecords);
-
-                        bool isSuccess = status.Equals("SUCCESS", StringComparison.Ordinal);
-                        logger.LogInformation("Status comparison - Value: '{Status}', Length: {Length}, IsSuccess: {IsSuccess}",
-                            status, status.Length, isSuccess);
-
-                        if (!isSuccess)
-                        {
-                            logger.LogWarning("Database returned non-SUCCESS status - Status: '{Status}', Message: '{Message}'",
-                                status, message);
-                            return OperationResult<ClientPropertiesGetResponseDto>.Failure(message);
-                        }
-
-                        isFirstRow = false;
-                    }
-
-                    ClientPropertyModel property = ClientMapper. MapClientPropertyFromReader(reader);
-
-                    if (property == null)
-                    {
-                        logger.LogWarning("MapClientPropertyFromReader returned null for a row");
-                        continue;
-                    }
-
-                    properties.Add(property);
+                    status = reader.GetValueOrDefault<string>("Status") ?? "SUCCESS";
+                    message = reader.GetValueOrDefault<string>("Message") ?? "Client properties retrieved successfully";
                 }
 
-                if (!status.Equals("SUCCESS", StringComparison.Ordinal))
+                // If no rows were returned at all (shouldn't happen with your SP, but handle it)
+                if (!hasRows)
                 {
-                    logger.LogWarning("Final status check failed - Status: '{Status}', Message: '{Message}'",
-                        status, message);
+                    logger.LogWarning("No rows returned from stored procedure - ClientId: {ClientId}", clientId);
+                    message = "No data returned from database";
+                    status = "ERROR";
+                }
+
+                // Check if we got an error status from the stored procedure
+                if (status == "ERROR")
+                {
+                    logger.LogError("Stored procedure returned error - ClientId: {ClientId}, Message: {Message}",
+                        clientId, message);
                     return OperationResult<ClientPropertiesGetResponseDto>.Failure(message);
                 }
 
-                logger.LogInformation("Status check passed - Status: '{Status}', Properties count: {Count}",
-                    status, properties.Count);
-
-                ClientPropertiesGetResponseDto responseDto = new ClientPropertiesGetResponseDto
+                var responseDto = new ClientPropertiesGetResponseDto
                 {
-                    Properties = properties ?? new List<ClientPropertyModel>(),
+                    Properties = properties,
+                    ClientFullName = clientFullName,
+                    ClientPhoneNumber = clientPhoneNumber,
+                    ClientAddress = clientAddress,
                     CurrentPage = currentPage,
                     PageSize = pageSize,
                     TotalRecords = totalRecords,
                     TotalPages = totalPages
                 };
 
-                logger.LogInformation("Client properties retrieved successfully - ClientId: {ClientId}, Page: {Page}, Count: {Count}, Total: {Total}",
+                logger.LogInformation(
+                    "Client properties retrieved successfully - ClientId: {ClientId}, Page: {Page}, Count: {Count}, Total: {Total}",
                     clientId, page, properties.Count, totalRecords);
 
                 return OperationResult<ClientPropertiesGetResponseDto>.Success(responseDto, message);
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error processing client properties data - ClientId: {ClientId}, Page: {Page}, Limit: {Limit}",
+                logger.LogError(ex,
+                    "Error processing client properties data - ClientId: {ClientId}, Page: {Page}, Limit: {Limit}",
                     clientId, page, limit);
+
                 return OperationResult<ClientPropertiesGetResponseDto>.Failure("Failed to process client properties data");
             }
         }
-
-
     }
 }

@@ -37,13 +37,12 @@
             this.lblPropertiesCount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.detailsSection = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblCreatedAt = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtClientID = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblPhone = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblFullName = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSectionTitle = new System.Windows.Forms.Label();
             this.topBar = new Guna.UI2.WinForms.Guna2Panel();
@@ -166,7 +165,6 @@
             // 
             // colPropertyId
             // 
-            this.colPropertyId.DataPropertyName = "PropertyId";
             this.colPropertyId.HeaderText = "رقم العقار";
             this.colPropertyId.Name = "colPropertyId";
             this.colPropertyId.ReadOnly = true;
@@ -174,28 +172,24 @@
             // colLocation
             // 
             this.colLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colLocation.DataPropertyName = "PropertyLocation";
             this.colLocation.HeaderText = "الموقع";
             this.colLocation.Name = "colLocation";
             this.colLocation.ReadOnly = true;
             // 
             // colTransactionType
             // 
-            this.colTransactionType.DataPropertyName = "TransactionType";
             this.colTransactionType.HeaderText = "نوع المعاملة";
             this.colTransactionType.Name = "colTransactionType";
             this.colTransactionType.ReadOnly = true;
             // 
             // colAmount
             // 
-            this.colAmount.DataPropertyName = "Amount";
             this.colAmount.HeaderText = "المبلغ";
             this.colAmount.Name = "colAmount";
             this.colAmount.ReadOnly = true;
             // 
             // colTransactionDate
             // 
-            this.colTransactionDate.DataPropertyName = "TransactionDate";
             this.colTransactionDate.HeaderText = "تاريخ المعاملة";
             this.colTransactionDate.Name = "colTransactionDate";
             this.colTransactionDate.ReadOnly = true;
@@ -236,14 +230,14 @@
             this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnNextPage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnNextPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
             this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnNextPage.Location = new System.Drawing.Point(730, 12);
+            this.btnNextPage.Location = new System.Drawing.Point(18, 11);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(110, 36);
+            this.btnNextPage.Size = new System.Drawing.Size(52, 36);
             this.btnNextPage.TabIndex = 1;
-            this.btnNextPage.Text = "← السابق";
+            this.btnNextPage.Text = "←";
             this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnPrevPage
@@ -254,14 +248,14 @@
             this.btnPrevPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPrevPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnPrevPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnPrevPage.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.btnPrevPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
             this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnPrevPage.Location = new System.Drawing.Point(150, 12);
+            this.btnPrevPage.Location = new System.Drawing.Point(89, 11);
             this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(110, 36);
+            this.btnPrevPage.Size = new System.Drawing.Size(50, 36);
             this.btnPrevPage.TabIndex = 0;
-            this.btnPrevPage.Text = "التالي →";
+            this.btnPrevPage.Text = "→";
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // propertiesHeader
@@ -306,13 +300,12 @@
             // detailsSection
             // 
             this.detailsSection.BorderRadius = 12;
-            this.detailsSection.Controls.Add(this.lblCreatedAt);
-            this.detailsSection.Controls.Add(this.label7);
-            this.detailsSection.Controls.Add(this.lblAddress);
+            this.detailsSection.Controls.Add(this.txtClientID);
+            this.detailsSection.Controls.Add(this.txtAddress);
             this.detailsSection.Controls.Add(this.label5);
-            this.detailsSection.Controls.Add(this.lblPhone);
+            this.detailsSection.Controls.Add(this.txtPhone);
             this.detailsSection.Controls.Add(this.label3);
-            this.detailsSection.Controls.Add(this.lblFullName);
+            this.detailsSection.Controls.Add(this.txtFullName);
             this.detailsSection.Controls.Add(this.label2);
             this.detailsSection.Controls.Add(this.lblSectionTitle);
             this.detailsSection.Dock = System.Windows.Forms.DockStyle.Top;
@@ -323,52 +316,40 @@
             this.detailsSection.Size = new System.Drawing.Size(1020, 170);
             this.detailsSection.TabIndex = 0;
             // 
-            // lblCreatedAt
+            // txtClientID
             // 
-            this.lblCreatedAt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCreatedAt.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblCreatedAt.ForeColor = System.Drawing.Color.White;
-            this.lblCreatedAt.Location = new System.Drawing.Point(570, 125);
-            this.lblCreatedAt.Name = "lblCreatedAt";
-            this.lblCreatedAt.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblCreatedAt.Size = new System.Drawing.Size(280, 20);
-            this.lblCreatedAt.TabIndex = 8;
-            this.lblCreatedAt.Text = "01/01/2024";
-            this.lblCreatedAt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtClientID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClientID.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtClientID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.txtClientID.Location = new System.Drawing.Point(23, 8);
+            this.txtClientID.Name = "txtClientID";
+            this.txtClientID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtClientID.Size = new System.Drawing.Size(100, 15);
+            this.txtClientID.TabIndex = 9;
+            this.txtClientID.Text = "0";
+            this.txtClientID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtClientID.Visible = false;
             // 
-            // label7
+            // txtAddress
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(856, 125);
-            this.label7.Name = "label7";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(140, 20);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "تاريخ التسجيل:";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAddress.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(23, 95);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblAddress.Size = new System.Drawing.Size(827, 30);
-            this.lblAddress.TabIndex = 6;
-            this.lblAddress.Text = "-";
-            this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtAddress.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtAddress.ForeColor = System.Drawing.Color.White;
+            this.txtAddress.Location = new System.Drawing.Point(106, 110);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtAddress.Size = new System.Drawing.Size(827, 30);
+            this.txtAddress.TabIndex = 6;
+            this.txtAddress.Text = "-";
+            this.txtAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label5.Location = new System.Drawing.Point(856, 95);
+            this.label5.Location = new System.Drawing.Point(939, 110);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(140, 20);
@@ -376,25 +357,25 @@
             this.label5.Text = "العنوان:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblPhone
+            // txtPhone
             // 
-            this.lblPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPhone.Font = new System.Drawing.Font("Arial", 10F);
-            this.lblPhone.ForeColor = System.Drawing.Color.White;
-            this.lblPhone.Location = new System.Drawing.Point(611, 65);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPhone.Size = new System.Drawing.Size(236, 23);
-            this.lblPhone.TabIndex = 4;
-            this.lblPhone.Text = "-";
-            this.lblPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhone.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtPhone.ForeColor = System.Drawing.Color.White;
+            this.txtPhone.Location = new System.Drawing.Point(694, 80);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPhone.Size = new System.Drawing.Size(236, 23);
+            this.txtPhone.TabIndex = 4;
+            this.txtPhone.Text = "-";
+            this.txtPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(856, 65);
+            this.label3.Location = new System.Drawing.Point(939, 80);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label3.Size = new System.Drawing.Size(140, 20);
@@ -402,25 +383,25 @@
             this.label3.Text = "رقم الهاتف:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblFullName
+            // txtFullName
             // 
-            this.lblFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFullName.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
-            this.lblFullName.ForeColor = System.Drawing.Color.White;
-            this.lblFullName.Location = new System.Drawing.Point(570, 35);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblFullName.Size = new System.Drawing.Size(280, 20);
-            this.lblFullName.TabIndex = 2;
-            this.lblFullName.Text = "-";
-            this.lblFullName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFullName.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.txtFullName.ForeColor = System.Drawing.Color.White;
+            this.txtFullName.Location = new System.Drawing.Point(653, 50);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFullName.Size = new System.Drawing.Size(280, 20);
+            this.txtFullName.TabIndex = 2;
+            this.txtFullName.Text = "-";
+            this.txtFullName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(856, 35);
+            this.label2.Location = new System.Drawing.Point(939, 50);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label2.Size = new System.Drawing.Size(140, 20);
@@ -433,7 +414,7 @@
             this.lblSectionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSectionTitle.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
             this.lblSectionTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblSectionTitle.Location = new System.Drawing.Point(856, 8);
+            this.lblSectionTitle.Location = new System.Drawing.Point(902, 8);
             this.lblSectionTitle.Name = "lblSectionTitle";
             this.lblSectionTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblSectionTitle.Size = new System.Drawing.Size(140, 22);
@@ -538,13 +519,12 @@
         private Guna.UI2.WinForms.Guna2Panel detailsSection;
         private System.Windows.Forms.Label lblSectionTitle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblFullName;
+        private System.Windows.Forms.Label txtFullName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label txtPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblCreatedAt;
+        private System.Windows.Forms.Label txtAddress;
+        private System.Windows.Forms.Label txtClientID;
         private Guna.UI2.WinForms.Guna2Panel propertiesSection;
         private Guna.UI2.WinForms.Guna2Panel propertiesHeader;
         private System.Windows.Forms.Label label8;

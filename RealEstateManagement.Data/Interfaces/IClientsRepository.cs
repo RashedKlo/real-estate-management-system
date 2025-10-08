@@ -14,5 +14,7 @@ namespace RealEstateManagement.Data.Interfaces
         Task<OperationResult<ClientDeleteResponseDto>> DeleteClientAsync(ClientDeleteRequestDto dto);
         Task<OperationResult<ClientGetResponseDto>> GetClientAsync(ClientGetRequestDto dto);
         Task<OperationResult<ClientsGetResponseDto>> GetClientsAsync(ClientsGetRequestDto dto);
+        Task<OperationResult<ClientPropertiesGetResponseDto>> GetClientPropertiesAsync(ClientPropertiesGetRequestDto dto);
+
     }
 }

@@ -413,8 +413,8 @@ namespace RealEstateManagement
             int clientId = Convert.ToInt32(dgvClients.SelectedRows[0].Cells["colClientId"].Value);
 
             frmClientDetails frmClients = Program.ServiceProvider.GetRequiredService<frmClientDetails>();
-            frmClients.setClientId(clientId);
-            frmClients.setMainForm(_frmMain);
+            frmClients.SetClientId(clientId);
+            frmClients.SetMainForm(_frmMain);
             frmClients.ShowDialog();
         }
 

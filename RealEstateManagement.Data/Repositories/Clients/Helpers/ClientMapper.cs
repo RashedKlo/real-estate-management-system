@@ -11,26 +11,32 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
 {
     public static class ClientMapper
     {
+        // ---------------------- Client Property Mapper ----------------------
         public static ClientPropertyModel MapClientPropertyFromReader(SqlDataReader reader)
         {
+            if (reader == null)
+                throw new ArgumentNullException(nameof(reader));
+
             return new ClientPropertyModel
             {
+                // Client-Property Relationship
                 ClientPropertyId = reader.GetValueOrDefault<int>("ClientPropertyId"),
                 ClientId = reader.GetValueOrDefault<int>("ClientId"),
                 PropertyId = reader.GetValueOrDefault<int>("PropertyId"),
                 TransactionType = reader.GetValueOrDefault<string>("TransactionType"),
                 TransactionDate = reader.GetValueOrDefault<DateTime>("TransactionDate"),
                 Amount = reader.GetValueOrDefault<decimal>("Amount"),
-                ClientFullName = reader.GetValueOrDefault<string>("ClientFullName"),
-                ClientPhoneNumber = reader.GetValueOrDefault<string>("ClientPhoneNumber"),
-                ClientAddress = reader.GetValueOrDefault<string>("ClientAddress"),
+
+                // Property Info
                 PropertyLocation = reader.GetValueOrDefault<string>("PropertyLocation"),
                 NumOfRooms = reader.GetValueOrDefault<int>("NumOfRooms"),
                 PropertyStatus = reader.GetValueOrDefault<string>("PropertyStatus"),
                 PropertyAvailability = reader.GetValueOrDefault<string>("PropertyAvailability"),
-                RentPrice = reader.GetValueOrDefault<decimal?>("RentPrice"),
-                SalePrice = reader.GetValueOrDefault<decimal?>("SalePrice"),
-                MortgagePrice = reader.GetValueOrDefault<decimal?>("MortgagePrice"),
+                RentPrice = reader.GetValueOrDefault<decimal>("RentPrice"),
+                SalePrice = reader.GetValueOrDefault<decimal>("SalePrice"),
+                MortgagePrice = reader.GetValueOrDefault<decimal>("MortgagePrice"),
+
+                // Owner Info
                 OwnerId = reader.GetValueOrDefault<int>("OwnerId"),
                 OwnerFullName = reader.GetValueOrDefault<string>("OwnerFullName"),
                 OwnerPhoneNumber = reader.GetValueOrDefault<string>("OwnerPhoneNumber"),
@@ -38,6 +44,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
             };
         }
 
+        // ---------------------- Client Create Mapper ----------------------
         public static ClientCreateResponseDto MapCreateResponseFromReader(SqlDataReader reader)
         {
             if (reader == null)
@@ -53,6 +60,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
             };
         }
 
+        // ---------------------- Client Update Mapper ----------------------
         public static ClientUpdateResponseDto MapUpdateResponseFromReader(SqlDataReader reader)
         {
             if (reader == null)
@@ -68,6 +76,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
             };
         }
 
+        // ---------------------- Client Delete Mapper ----------------------
         public static ClientDeleteResponseDto MapDeleteResponseFromReader(SqlDataReader reader)
         {
             if (reader == null)
@@ -83,6 +92,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
             };
         }
 
+        // ---------------------- Single Client Mapper ----------------------
         public static ClientGetResponseDto MapGetResponseFromReader(SqlDataReader reader)
         {
             if (reader == null)
@@ -98,6 +108,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Helpers
             };
         }
 
+        // ---------------------- List Client Mapper ----------------------
         public static ClientModel MapClientFromReader(SqlDataReader reader)
         {
             if (reader == null)

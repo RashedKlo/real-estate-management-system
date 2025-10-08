@@ -51,9 +51,15 @@ namespace RealEstateManagement
             // Register forms
             services.AddTransient<frmSplash>();
             services.AddTransient<frmMain>();
+            //Clients
             services.AddTransient<frmClients>();
             services.AddTransient<frmEditClient>();
             services.AddTransient<frmClientDetails>();
+
+            //Owners
+            services.AddTransient<frmOwners>();
+            services.AddTransient<frmEditOwner>();
+            services.AddTransient<frmOwnerDetails>();
         }
 
 

@@ -202,10 +202,12 @@
             // 
             this.btnReports.Animated = true;
             this.btnReports.BorderRadius = 10;
+            this.btnReports.Cursor = System.Windows.Forms.Cursors.No;
             this.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnReports.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnReports.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReports.Enabled = false;
             this.btnReports.FillColor = System.Drawing.Color.Transparent;
             this.btnReports.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.ForeColor = System.Drawing.Color.White;
@@ -228,10 +230,12 @@
             // 
             this.btnTransactionsList.Animated = true;
             this.btnTransactionsList.BorderRadius = 10;
+            this.btnTransactionsList.Cursor = System.Windows.Forms.Cursors.No;
             this.btnTransactionsList.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTransactionsList.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTransactionsList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTransactionsList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTransactionsList.Enabled = false;
             this.btnTransactionsList.FillColor = System.Drawing.Color.Transparent;
             this.btnTransactionsList.Font = new System.Drawing.Font("Arial", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTransactionsList.ForeColor = System.Drawing.Color.White;

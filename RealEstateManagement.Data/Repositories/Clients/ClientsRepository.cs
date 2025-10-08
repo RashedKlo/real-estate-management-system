@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace RealEstateManagement.Data.Repositories.Client
 {
-    public class ClientsRepository:IClientsRepository
+    public class ClientsRepository : IClientsRepository
     {
         private readonly ILogger<ClientsRepository> _logger;
 
@@ -46,5 +46,10 @@ namespace RealEstateManagement.Data.Repositories.Client
         {
             return await GetClientsQuery.ExecuteAsync(dto, _logger);
         }
+        public async Task<OperationResult<ClientPropertiesGetResponseDto>> GetClientPropertiesAsync(ClientPropertiesGetRequestDto dto)
+        {
+            return await GetClientPropertiesQuery.ExecuteAsync(dto, _logger);
+        }
+
     }
 }

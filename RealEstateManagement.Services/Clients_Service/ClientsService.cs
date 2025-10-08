@@ -233,7 +233,7 @@ namespace RealEstateManagement.Services.Client
             }
 
             OperationResult<ClientPropertiesGetResponseDto> result =
-                await _clientRepository.get(dto);
+                await _clientRepository.GetClientPropertiesAsync(dto);
 
             if (result == null)
             {

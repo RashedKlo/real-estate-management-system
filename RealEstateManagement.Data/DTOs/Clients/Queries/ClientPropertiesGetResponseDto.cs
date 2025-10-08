@@ -8,6 +8,10 @@ namespace RealEstateManagement.Data.DTOs.Clients.Queries
     public class ClientPropertiesGetResponseDto
     {
         public List<ClientPropertyModel> Properties { get; set; }
+        // Client Info
+        public string ClientFullName { get; set; }
+        public string ClientPhoneNumber { get; set; }
+        public string ClientAddress { get; set; }
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
         public int TotalRecords { get; set; }

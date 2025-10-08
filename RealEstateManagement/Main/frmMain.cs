@@ -97,17 +97,13 @@ namespace RealEstateManagement
             // Clear existing content
             mainMdiPanel.Controls.Clear();
 
-            // Create and add settings form
-            frmOwners settingsForm = new  frmOwners(this)
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill
-            };
-
-            mainMdiPanel.Controls.Add(settingsForm);
-            settingsForm.Show();
-            // TODO: Load owners list
+            // Use GetRequiredService to throw an exception if resolution fails
+            var frmOwners = Program.ServiceProvider.GetRequiredService<frmOwners>();
+            frmOwners.TopLevel = false;
+            frmOwners.FormBorderStyle = FormBorderStyle.None;
+            frmOwners.Dock = DockStyle.Fill;
+            mainMdiPanel.Controls.Add(frmOwners);
+            frmOwners.Show();
         }
 
         private void btnClientsList_Click(object sender, EventArgs e)
