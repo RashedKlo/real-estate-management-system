@@ -85,19 +85,20 @@
             this.dgvOwners.AllowUserToAddRows = false;
             this.dgvOwners.AllowUserToDeleteRows = false;
             this.dgvOwners.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             this.dgvOwners.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvOwners.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvOwners.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOwners.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOwners.ColumnHeadersHeight = 40;
+            this.dgvOwners.ColumnHeadersHeight = 50;
             this.dgvOwners.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvOwners.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOwnerId,
@@ -105,47 +106,46 @@
             this.colPhoneNumber,
             this.colAddress,
             this.colCreatedAt});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cairo", 10F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(106)))), ((int)(((byte)(182)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvOwners.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOwners.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOwners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.dgvOwners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
             this.dgvOwners.Location = new System.Drawing.Point(0, 70);
             this.dgvOwners.MultiSelect = false;
             this.dgvOwners.Name = "dgvOwners";
             this.dgvOwners.ReadOnly = true;
             this.dgvOwners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvOwners.RowHeadersVisible = false;
-            this.dgvOwners.RowTemplate.Height = 35;
+            this.dgvOwners.RowTemplate.Height = 42;
             this.dgvOwners.Size = new System.Drawing.Size(780, 480);
             this.dgvOwners.TabIndex = 2;
-            this.dgvOwners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.dgvOwners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.dgvOwners.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvOwners.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvOwners.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvOwners.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvOwners.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvOwners.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
-            this.dgvOwners.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.dgvOwners.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.dgvOwners.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.dgvOwners.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
+            this.dgvOwners.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(48)))), ((int)(((byte)(60)))));
             this.dgvOwners.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvOwners.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvOwners.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.dgvOwners.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvOwners.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvOwners.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvOwners.ThemeStyle.HeaderStyle.Height = 50;
             this.dgvOwners.ThemeStyle.ReadOnly = true;
-            this.dgvOwners.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.dgvOwners.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.dgvOwners.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvOwners.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.dgvOwners.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Cairo", 10F);
             this.dgvOwners.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvOwners.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvOwners.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.dgvOwners.ThemeStyle.RowsStyle.Height = 42;
+            this.dgvOwners.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(106)))), ((int)(((byte)(182)))));
             this.dgvOwners.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-        
             // 
             // colOwnerId
             // 
@@ -224,11 +224,12 @@
             this.btnNextPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
             this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnNextPage.Location = new System.Drawing.Point(120, 12);
+            this.btnNextPage.Location = new System.Drawing.Point(15, 11);
             this.btnNextPage.Name = "btnNextPage";
-            this.btnNextPage.Size = new System.Drawing.Size(95, 36);
+            this.btnNextPage.Size = new System.Drawing.Size(65, 36);
             this.btnNextPage.TabIndex = 1;
-            this.btnNextPage.Text = " →";
+            this.btnNextPage.Text = "←";
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
             // 
             // btnPrevPage
             // 
@@ -243,11 +244,12 @@
             this.btnPrevPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
             this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnPrevPage.Location = new System.Drawing.Point(15, 12);
+            this.btnPrevPage.Location = new System.Drawing.Point(86, 11);
             this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(95, 36);
+            this.btnPrevPage.Size = new System.Drawing.Size(64, 36);
             this.btnPrevPage.TabIndex = 0;
-            this.btnPrevPage.Text = "←";
+            this.btnPrevPage.Text = " →";
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
             // 
             // topBar
             // 
@@ -282,6 +284,7 @@
             this.btnDelete.Size = new System.Drawing.Size(95, 36);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "حذف";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -300,6 +303,7 @@
             this.btnEdit.Size = new System.Drawing.Size(95, 36);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "تعديل";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnView
             // 
@@ -318,6 +322,7 @@
             this.btnView.Size = new System.Drawing.Size(95, 36);
             this.btnView.TabIndex = 2;
             this.btnView.Text = "عرض";
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnAdd
             // 
@@ -335,6 +340,7 @@
             this.btnAdd.Size = new System.Drawing.Size(150, 36);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "+ إضافة مالك جديد";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblTotalOwners
             // 
@@ -387,6 +393,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(200, 45);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "🔄 تحديث القائمة";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // guna2Separator1
             // 
@@ -413,7 +420,8 @@
             this.btnClearFilter.Size = new System.Drawing.Size(95, 38);
             this.btnClearFilter.TabIndex = 5;
             this.btnClearFilter.Text = "مسح الفلتر";
-            // l
+            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
             // btnApplyFilter
             // 
             this.btnApplyFilter.Animated = true;
@@ -455,6 +463,7 @@
             this.txtFilterPhone.SelectedText = "";
             this.txtFilterPhone.Size = new System.Drawing.Size(200, 38);
             this.txtFilterPhone.TabIndex = 3;
+            this.txtFilterPhone.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // label2
             // 
@@ -493,6 +502,7 @@
             this.txtFilterName.SelectedText = "";
             this.txtFilterName.Size = new System.Drawing.Size(200, 38);
             this.txtFilterName.TabIndex = 1;
+            this.txtFilterName.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // label1
             // 
@@ -533,7 +543,7 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.Text = "إدارة الملاك";
-     
+            this.Load += new System.EventHandler(this.frmOwners_Load);
             this.mainContainer.ResumeLayout(false);
             this.contentArea.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOwners)).EndInit();

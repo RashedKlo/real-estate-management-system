@@ -17,7 +17,7 @@ namespace RealEstateManagement.Data.Repositories.Client.Queries
         private const string GetClientsSql = @"
             EXEC [dbo].[sp_GetClients] 
                 @Page, 
-                @Limit";
+                @Limit,@FullName,@PhoneNumber";
 
         public static async Task<OperationResult<ClientsGetResponseDto>> ExecuteAsync(
             ClientsGetRequestDto dto,
@@ -84,6 +84,8 @@ namespace RealEstateManagement.Data.Repositories.Client.Queries
 
             command.AddParameter("@Page", dto.Page);
             command.AddParameter("@Limit", dto.Limit);
+            command.AddParameter("@FullName", dto.FullName);
+            command.AddParameter("@PhoneNumber", dto.PhoneNumber);
             return command;
         }
 

@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using RealEstateManagement.Data.DTOs.Owners.Queries;
+using RealEstateManagement.Data.Helpers;
+using RealEstateManagement.Data.Models;
+using RealEstateManagement.Data.Repositories.Owner.Helpers;
 using RealEstateManagement.Data.Results;
 using RealEstateManagement.Data.Settings;
-using RealEstateManagement.Data.Models ;
-using System.Data.SqlClient;
-using RealEstateManagement.Data.Helpers;
-using RealEstateManagement.Data.Repositories.Owner.Helpers;
-using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 
 namespace RealEstateManagement.Data.Repositories.Owner.Queries
 {
@@ -16,7 +16,9 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
     {
         private const string GetOwnersSql = @"
             EXEC [dbo].[sp_GetOwners] 
-                @Page, @Limit";
+                @Page, 
+                @Limit,
+@FullName,@PhoneNumber";
 
         public static async Task<OperationResult<OwnersGetResponseDto>> ExecuteAsync(
             OwnersGetRequestDto dto,
@@ -24,48 +26,67 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
         {
             if (dto == null)
             {
-                logger.LogError("GetOwnersQuery received null request data");
+                logger.LogError("Request data is null");
                 return OperationResult<OwnersGetResponseDto>.Failure("Request data is required");
             }
 
-            logger.LogInformation("Executing Owners retrieval for Page: {Page}, Limit: {Limit}",
-                dto.Page, dto.Limit);
+            logger.LogInformation("Retrieving owners - Page: {Page}, Limit: {Limit}", dto.Page, dto.Limit);
 
             try
             {
-                 var connection = new SqlConnection(DBSettings.connectionString);
-                await connection.OpenAsync();
+                using (SqlConnection connection = new SqlConnection(DBSettings.connectionString))
+                {
+                    await connection.OpenAsync();
 
-                 var command = CreateCommand(connection, dto);
-                 var reader = await command.ExecuteReaderAsync();
+                    using (SqlCommand command = CreateCommand(connection, dto))
+                    {
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            if (reader == null)
+                            {
+                                logger.LogError("Reader is null after ExecuteReaderAsync");
+                                return OperationResult<OwnersGetResponseDto>.Failure("Failed to retrieve data from database");
+                            }
 
-                return await ProcessResultAsync(reader, logger, dto.Page, dto.Limit);
+                            return await ProcessResultAsync(reader, logger, dto.Page, dto.Limit);
+                        }
+                    }
+                }
             }
-            catch (SqlException ex) when (ex.Number >=2 && ex.Number<= 53)
+            catch (SqlException ex) when (ex.Number >= 2 && ex.Number <= 53)
             {
-                logger.LogError(ex, "Database connection failed during Owners retrieval for Page {Page}, Limit {Limit}",
-                    dto.Page, dto.Limit);
+                logger.LogError(ex, "Database connection failed - Page: {Page}, Limit: {Limit}", dto.Page, dto.Limit);
                 return OperationResult<OwnersGetResponseDto>.Failure("Database connection failed. Please try again.");
             }
             catch (SqlException ex)
             {
-                logger.LogError(ex, "Database error during Owners retrieval for Page {Page}, Limit {Limit}. Error: {Error}",
-                    dto.Page, dto.Limit, ex.Message);
+                logger.LogError(ex, "Database error - Page: {Page}, Limit: {Limit}, SqlError: {ErrorNumber}",
+                    dto.Page, dto.Limit, ex.Number);
                 return OperationResult<OwnersGetResponseDto>.Failure("Database operation failed");
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Unexpected error during Owners retrieval for Page {Page}, Limit {Limit}",
-                    dto.Page, dto.Limit);
-                return OperationResult<OwnersGetResponseDto>.Failure("Owners retrieval failed due to system error");
+                logger.LogError(ex, "Unexpected error - Page: {Page}, Limit: {Limit}", dto.Page, dto.Limit);
+                return OperationResult<OwnersGetResponseDto>.Failure("System error occurred during owner retrieval");
             }
         }
 
+        // ---------------- Helper Methods ----------------
+
         private static SqlCommand CreateCommand(SqlConnection connection, OwnersGetRequestDto dto)
         {
-            var command = new SqlCommand(GetOwnersSql, connection);
+            if (connection == null)
+                throw new ArgumentNullException(nameof(connection), "Database connection is null");
+
+            SqlCommand command = new SqlCommand(GetOwnersSql, connection)
+            {
+                CommandType = System.Data.CommandType.Text
+            };
+
             command.AddParameter("@Page", dto.Page);
             command.AddParameter("@Limit", dto.Limit);
+            command.AddParameter("@PhoneNumber", dto.PhoneNumber);
+            command.AddParameter("@FullName", dto.FullName);
             return command;
         }
 
@@ -75,21 +96,29 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
             int page,
             int limit)
         {
-            var Owners = new List<OwnerModel>();
-            string status = "Error";
-            string message = "Owners retrieval completed";
+            if (reader == null)
+            {
+                logger.LogError("Reader is null in ProcessResultAsync");
+                return OperationResult<OwnersGetResponseDto>.Failure("Failed to process database results");
+            }
+
+            List<OwnerModel> owners = new List<OwnerModel>();
+            string status = "ERROR";
+            string message = "No data retrieved";
             int currentPage = 0, pageSize = 0, totalRecords = 0, totalPages = 0;
             bool hasNextPage = false, hasPreviousPage = false;
 
             try
             {
-                // Read all Owner records
                 while (await reader.ReadAsync())
                 {
-                    var Owner = OwnerMapper.MapOwnerFromReader(reader);
+                    OwnerModel owner = OwnerMapper.MapOwnerFromReader(reader);
 
-                    // Get pagination metadata from first row
-                    if (Owners.Count == 0)
+                    if (owner != null)
+                        owners.Add(owner);
+
+                    // Only read pagination info from the first row
+                    if (owners.Count == 1)
                     {
                         currentPage = reader.GetValueOrDefault<int>("CurrentPage");
                         pageSize = reader.GetValueOrDefault<int>("PageSize");
@@ -97,23 +126,14 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
                         totalPages = reader.GetValueOrDefault<int>("TotalPages");
                         hasNextPage = reader.GetValueOrDefault<int>("HasNextPage") == 1;
                         hasPreviousPage = reader.GetValueOrDefault<int>("HasPreviousPage") == 1;
-                        status = reader.GetValueOrDefault<string>("Status") ?? "Error";
-                        message = reader.GetValueOrDefault<string>("Message") ?? "Owners retrieval completed";
+                        status = reader.GetValueOrDefault<string>("Status") ?? "ERROR";
+                        message = reader.GetValueOrDefault<string>("Message") ?? "Owners retrieval failed";
                     }
-
-                    Owners.Add(Owner);
                 }
 
-                if (status != "SUCCESS")
+                OwnersGetResponseDto responseDto = new OwnersGetResponseDto
                 {
-                    logger.LogWarning("Owners retrieval failed for Page {Page}, Limit {Limit}: {Message}",
-                        page, limit, message);
-                    return OperationResult<OwnersGetResponseDto>.Failure(message);
-                }
-
-                var responseDto = new OwnersGetResponseDto
-                {
-                    Owners = Owners,
+                    Owners = owners,
                     CurrentPage = currentPage,
                     PageSize = pageSize,
                     TotalRecords = totalRecords,
@@ -123,15 +143,14 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
                 };
 
                 logger.LogInformation("Owners retrieved successfully - Page: {Page}, Count: {Count}, Total: {Total}",
-                    page, Owners.Count, totalRecords);
+                    page, owners.Count, totalRecords);
 
                 return OperationResult<OwnersGetResponseDto>.Success(responseDto, message);
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error mapping Owners retrieval result for Page {Page}, Limit {Limit}",
-                    page, limit);
-                return OperationResult<OwnersGetResponseDto>.Failure("Failed to process Owners retrieval result");
+                logger.LogError(ex, "Error processing owner data - Page: {Page}, Limit: {Limit}", page, limit);
+                return OperationResult<OwnersGetResponseDto>.Failure("Failed to process owner data");
             }
         }
     }

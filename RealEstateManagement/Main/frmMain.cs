@@ -102,6 +102,7 @@ namespace RealEstateManagement
             frmOwners.TopLevel = false;
             frmOwners.FormBorderStyle = FormBorderStyle.None;
             frmOwners.Dock = DockStyle.Fill;
+            frmOwners.SetMainForm(this);
             mainMdiPanel.Controls.Add(frmOwners);
             frmOwners.Show();
         }

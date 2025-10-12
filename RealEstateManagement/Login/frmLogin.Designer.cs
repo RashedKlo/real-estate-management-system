@@ -348,6 +348,7 @@
             // 
             // lblWelcomeBack
             // 
+            this.lblWelcomeBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblWelcomeBack.Font = new System.Drawing.Font("Arial", 32F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeBack.ForeColor = System.Drawing.Color.White;
             this.lblWelcomeBack.Location = new System.Drawing.Point(50, 260);

@@ -7,12 +7,14 @@ using RealEstateManagement.Data.Results;
 
 namespace RealEstateManagement.Data.Interfaces
 {
-    public interface IOwnerRepository
+    public interface IOwnersRepository
     {
         Task<OperationResult<OwnerCreateResponseDto>> AddOwnerAsync(OwnerCreateRequestDto dto);
         Task<OperationResult<OwnerUpdateResponseDto>> UpdateOwnerAsync(OwnerUpdateRequestDto dto);
         Task<OperationResult<OwnerDeleteResponseDto>> DeleteOwnerAsync(OwnerDeleteRequestDto dto);
         Task<OperationResult<OwnerGetResponseDto>> GetOwnerAsync(OwnerGetRequestDto dto);
         Task<OperationResult<OwnersGetResponseDto>> GetOwnersAsync(OwnersGetRequestDto dto);
+        Task<OperationResult<OwnerPropertiesGetResponseDto>> GetOwnerPropertiesAsync(OwnerPropertiesGetRequestDto dto);
+
     }
 }

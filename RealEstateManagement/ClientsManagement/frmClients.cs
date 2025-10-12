@@ -169,7 +169,11 @@ namespace RealEstateManagement
             return new ClientsGetRequestDto
             {
                 Page = _currentPage,
-                Limit = PAGE_SIZE
+                Limit = PAGE_SIZE,
+                FullName=txtFilterName.Text,
+                PhoneNumber=txtFilterPhone.Text
+
+
             };
         }
 
@@ -434,7 +438,10 @@ namespace RealEstateManagement
             frmClients.Mode = frmEditClient.EnMode.Update;
             frmClients.ShowDialog();
         }
-
+        private async void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            await LoadClientsData();
+        }
         private async void btnDelete_Click(object sender, EventArgs e)
         {
             try
@@ -476,5 +483,11 @@ namespace RealEstateManagement
             }
         }
 
+        private  async void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            txtFilterPhone.Clear();
+            txtFilterName.Clear();
+            await LoadClientsData();
+        }
     }
 }

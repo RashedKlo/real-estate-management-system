@@ -6,10 +6,11 @@ using Microsoft.Extensions.Logging;
 using RealEstateManagement.Data.DTOs.Owners.Queries;
 using RealEstateManagement.Data.Helpers;
 using RealEstateManagement.Data.Models;
+using RealEstateManagement.Data.Repositories.Owner.Helpers;
 using RealEstateManagement.Data.Results;
 using RealEstateManagement.Data.Settings;
 
-namespace RealEstateManagement.Data.Repositories.OwnerProperties.Queries
+namespace RealEstateManagement.Data.Repositories.Owner.Queries
 {
     public class GetOwnerPropertiesQuery
     {
@@ -97,133 +98,89 @@ namespace RealEstateManagement.Data.Repositories.OwnerProperties.Queries
             }
 
             List<OwnerPropertyModel> properties = new List<OwnerPropertyModel>();
-            string status = "ERROR";
-            string message = "Owner properties retrieval completed";
-            int currentPage = 0, pageSize = 0, totalRecords = 0, totalPages = 0;
+            string status = "SUCCESS";
+            string message = "Owner properties retrieved successfully";
+            int currentPage = page, pageSize = limit, totalRecords = 0, totalPages = 0;
+
+            string ownerFullName = string.Empty;
+            string ownerPhoneNumber = string.Empty;
+            string ownerAddress = string.Empty;
 
             try
             {
-                bool isFirstRow = true;
+                bool hasRows = false;
 
                 while (await reader.ReadAsync())
                 {
-                    // Debug logging for first row
-                    if (isFirstRow)
+                    hasRows = true;
+
+                    // Check if this is an error row (OwnerPropertyId will be NULL in error case)
+                    var ownerPropertyId = reader.GetValueOrDefault<int?>("OwnerPropertyId");
+
+                    if (ownerPropertyId.HasValue)
                     {
-                        for (int i = 0; i < reader.FieldCount; i++)
-                        {
-                            string colName = reader.GetName(i);
-                            object colValue = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                            logger.LogInformation("Column[{Index}] '{Name}' = '{Value}'", i, colName, colValue);
-                        }
-                        logger.LogInformation("===== END FIRST ROW DEBUG =====");
+                        // This is a valid property row - map it
+                        var property = OwnerMapper.MapOwnerPropertyFromReader(reader);
+                        properties.Add(property);
                     }
 
-                    // Get metadata from first row
-                    if (properties.Count == 0)
-                    {
-                        currentPage = reader.GetValueOrDefault<int>("CurrentPage");
-                        pageSize = reader.GetValueOrDefault<int>("PageSize");
-                        totalRecords = reader.GetValueOrDefault<int>("TotalRecords");
-                        totalPages = reader.GetValueOrDefault<int>("TotalPages");
+                    // Read owner info and pagination from every row (they're repeated)
+                    // In case of error row or success row, these fields are always present
+                    ownerFullName = reader.GetValueOrDefault<string>("OwnerFullName") ?? string.Empty;
+                    ownerPhoneNumber = reader.GetValueOrDefault<string>("OwnerPhoneNumber") ?? string.Empty;
+                    ownerAddress = reader.GetValueOrDefault<string>("OwnerAddress") ?? string.Empty;
 
-                        // Get Status with detailed logging
-                        string rawStatus = null;
-                        try
-                        {
-                            int statusOrdinal = reader.GetOrdinal("Status");
-                            if (!reader.IsDBNull(statusOrdinal))
-                            {
-                                rawStatus = reader.GetString(statusOrdinal);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            logger.LogError(ex, "Error reading Status column");
-                        }
+                    currentPage = reader.GetValueOrDefault<int>("CurrentPage");
+                    pageSize = reader.GetValueOrDefault<int>("PageSize");
+                    totalRecords = reader.GetValueOrDefault<int>("TotalRecords");
+                    totalPages = (int)(totalRecords / limit);
 
-                        status = rawStatus?.Trim() ?? "ERROR";
-                        message = reader.GetValueOrDefault<string>("Message")?.Trim() ?? "Owner properties retrieval completed";
-
-                        logger.LogInformation("Metadata - RawStatus: '{Raw}', Status: '{Status}', Message: '{Message}', TotalRecords: {TotalRecords}",
-                            rawStatus, status, message, totalRecords);
-
-                        bool isSuccess = status.Equals("SUCCESS", StringComparison.Ordinal);
-                        logger.LogInformation("Status comparison - Value: '{Status}', Length: {Length}, IsSuccess: {IsSuccess}",
-                            status, status.Length, isSuccess);
-
-                        if (!isSuccess)
-                        {
-                            logger.LogWarning("Database returned non-SUCCESS status - Status: '{Status}', Message: '{Message}'",
-                                status, message);
-                            return OperationResult<OwnerPropertiesGetResponseDto>.Failure(message);
-                        }
-
-                        isFirstRow = false;
-                    }
-
-                    OwnerPropertyModel property = MapOwnerPropertyFromReader(reader);
-
-                    if (property == null)
-                    {
-                        logger.LogWarning("MapOwnerPropertyFromReader returned null for a row");
-                        continue;
-                    }
-
-                    properties.Add(property);
+                    status = reader.GetValueOrDefault<string>("Status") ?? "SUCCESS";
+                    message = reader.GetValueOrDefault<string>("Message") ?? "Owner properties retrieved successfully";
                 }
 
-                if (!status.Equals("SUCCESS", StringComparison.Ordinal))
+                // If no rows were returned at all (shouldn't happen with your SP, but handle it)
+                if (!hasRows)
                 {
-                    logger.LogWarning("Final status check failed - Status: '{Status}', Message: '{Message}'",
-                        status, message);
+                    logger.LogWarning("No rows returned from stored procedure - OwnerId: {OwnerId}", ownerId);
+                    message = "No data returned from database";
+                    status = "ERROR";
+                }
+
+                // Check if we got an error status from the stored procedure
+                if (status == "ERROR")
+                {
+                    logger.LogError("Stored procedure returned error - OwnerId: {OwnerId}, Message: {Message}",
+                        ownerId, message);
                     return OperationResult<OwnerPropertiesGetResponseDto>.Failure(message);
                 }
 
-                logger.LogInformation("Status check passed - Status: '{Status}', Properties count: {Count}",
-                    status, properties.Count);
-
-                OwnerPropertiesGetResponseDto responseDto = new OwnerPropertiesGetResponseDto
+                var responseDto = new OwnerPropertiesGetResponseDto
                 {
-                    Properties = properties ?? new List<OwnerPropertyModel>(),
+                    Properties = properties,
+                    OwnerFullName = ownerFullName,
+                    OwnerPhoneNumber = ownerPhoneNumber,
+                    OwnerAddress = ownerAddress,
                     CurrentPage = currentPage,
                     PageSize = pageSize,
                     TotalRecords = totalRecords,
                     TotalPages = totalPages
                 };
 
-                logger.LogInformation("Owner properties retrieved successfully - OwnerId: {OwnerId}, Page: {Page}, Count: {Count}, Total: {Total}",
+                logger.LogInformation(
+                    "Owner properties retrieved successfully - OwnerId: {OwnerId}, Page: {Page}, Count: {Count}, Total: {Total}",
                     ownerId, page, properties.Count, totalRecords);
 
                 return OperationResult<OwnerPropertiesGetResponseDto>.Success(responseDto, message);
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error processing owner properties data - OwnerId: {OwnerId}, Page: {Page}, Limit: {Limit}",
+                logger.LogError(ex,
+                    "Error processing owner properties data - OwnerId: {OwnerId}, Page: {Page}, Limit: {Limit}",
                     ownerId, page, limit);
+
                 return OperationResult<OwnerPropertiesGetResponseDto>.Failure("Failed to process owner properties data");
             }
-        }
-
-        private static OwnerPropertyModel MapOwnerPropertyFromReader(SqlDataReader reader)
-        {
-            return new OwnerPropertyModel
-            {
-                PropertyId = reader.GetValueOrDefault<int>("PropertyId"),
-                Location = reader.GetValueOrDefault<string>("Location"),
-                NumOfRooms = reader.GetValueOrDefault<int>("NumOfRooms"),
-                Status = reader.GetValueOrDefault<string>("Status"),
-                Availability = reader.GetValueOrDefault<string>("Availability"),
-                RentPrice = reader.GetValueOrDefault<decimal?>("RentPrice"),
-                SalePrice = reader.GetValueOrDefault<decimal?>("SalePrice"),
-                MortgagePrice = reader.GetValueOrDefault<decimal?>("MortgagePrice"),
-                OwnerId = reader.GetValueOrDefault<int>("OwnerId"),
-                CreatedAt = reader.GetValueOrDefault<DateTime>("CreatedAt"),
-                OwnerFullName = reader.GetValueOrDefault<string>("OwnerFullName"),
-                OwnerPhoneNumber = reader.GetValueOrDefault<string>("OwnerPhoneNumber"),
-                OwnerAddress = reader.GetValueOrDefault<string>("OwnerAddress"),
-                OwnerCreatedAt = reader.GetValueOrDefault<DateTime>("OwnerCreatedAt")
-            };
         }
     }
 }

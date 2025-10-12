@@ -3,7 +3,9 @@ using System.Windows.Forms;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RealEstateManagement.Services.Client;
+using RealEstateManagement.Services.Owner;
 using RealEstateManagement.Data.Repositories.Client;
+using RealEstateManagement.Data.Repositories.Owner;
 using RealEstateManagement.Services.Interfaces;
 using RealEstateManagement.Data.Interfaces;
 
@@ -47,6 +49,12 @@ namespace RealEstateManagement
 
             // Register services
             services.AddScoped<IClientsService, ClientsService>();
+
+            // Register Owners Service
+            services.AddScoped<IOwnersService, OwnersService>();
+
+            // Register Owners Repository (if not already registered)
+            services.AddScoped<IOwnersRepository, OwnerRepository>();
 
             // Register forms
             services.AddTransient<frmSplash>();

@@ -7,12 +7,13 @@ using RealEstateManagement.Data.DTOs.Owners.Queries;
 using RealEstateManagement.Data.Repositories.Owner.Commands;
 using RealEstateManagement.Data.Repositories.Owner.Queries;
 using RealEstateManagement.Data.Results;
+using RealEstateManagement.Data.Interfaces;
 
 using Microsoft.Extensions.Logging;
 
 namespace RealEstateManagement.Data.Repositories.Owner
 {
-    public class OwnerRepository
+    public class OwnerRepository:IOwnersRepository
     {
         private readonly ILogger<OwnerRepository> _logger;
 
@@ -45,5 +46,10 @@ namespace RealEstateManagement.Data.Repositories.Owner
         {
             return await GetOwnersQuery.ExecuteAsync(dto, _logger);
         }
+       public async Task<OperationResult<OwnerPropertiesGetResponseDto>> GetOwnerPropertiesAsync(OwnerPropertiesGetRequestDto dto)
+        {
+            return await GetOwnerPropertiesQuery.ExecuteAsync(dto, _logger);
+        }
+
     }
 }

@@ -33,9 +33,6 @@ F:\RealEstateManagement\RealEstateManagement.Data\bin\Debug\System.Runtime.Compi
 F:\RealEstateManagement\RealEstateManagement.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\RealEstateManagement\RealEstateManagement.Data\bin\Debug\System.ValueTuple.xml
 F:\RealEstateManagement\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.csproj.CopyComplete
-F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.csproj.CoreCompileInputs.cache
-F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.dll
-F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.pdb
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\RealEstateManagement.Data.dll.config
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\RealEstateManagement.Data.dll
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\RealEstateManagement.Data.pdb
@@ -67,4 +64,8 @@ F:\real-estate-management\RealEstateManagement.Data\bin\Debug\System.Numerics.Ve
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\real-estate-management\RealEstateManagement.Data\bin\Debug\System.ValueTuple.xml
+F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.csproj.CoreCompileInputs.cache
 F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.csproj.CopyComplete
+F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.dll
+F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.pdb
+F:\real-estate-management\RealEstateManagement.Data\obj\Debug\RealEstateManagement.Data.csproj.AssemblyReference.cache

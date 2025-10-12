@@ -2,15 +2,8 @@
 {
     partial class frmOwnerDetails
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,77 +15,461 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnSendMessage = new Guna.UI2.WinForms.Guna2Button();
+            this.mainContainer = new Guna.UI2.WinForms.Guna2Panel();
+            this.contentPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.propertiesSection = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgvProperties = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.colPropertyId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumOfRooms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAvailability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRentPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMortgagePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paginationPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPageInfo = new System.Windows.Forms.Label();
+            this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrevPage = new Guna.UI2.WinForms.Guna2Button();
+            this.propertiesHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPropertiesCount = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.detailsSection = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtOwnerID = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtPhone = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblSectionTitle = new System.Windows.Forms.Label();
+            this.topBar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblOwnerId = new System.Windows.Forms.Label();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.pnlDetails = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblDateJoined = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblContactAddress = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblContactPhone = new Guna.UI2.WinForms.Guna2Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblContactEmail = new Guna.UI2.WinForms.Guna2Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlProperties = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblPropertyCount = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvProperties = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.btnViewContract = new Guna.UI2.WinForms.Guna2Button();
-            this.pnlHeader.SuspendLayout();
-            this.pnlDetails.SuspendLayout();
-            this.pnlProperties.SuspendLayout();
+            this.mainContainer.SuspendLayout();
+            this.contentPanel.SuspendLayout();
+            this.propertiesSection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
+            this.paginationPanel.SuspendLayout();
+            this.propertiesHeader.SuspendLayout();
+            this.detailsSection.SuspendLayout();
+            this.topBar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlHeader
+            // mainContainer
             // 
-            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.pnlHeader.Controls.Add(this.btnSendMessage);
-            this.pnlHeader.Controls.Add(this.btnClose);
-            this.pnlHeader.Controls.Add(this.lblOwnerId);
-            this.pnlHeader.Controls.Add(this.lblHeader);
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(950, 70);
-            this.pnlHeader.TabIndex = 0;
+            this.mainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
+            this.mainContainer.Controls.Add(this.contentPanel);
+            this.mainContainer.Controls.Add(this.topBar);
+            this.mainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainContainer.Location = new System.Drawing.Point(0, 0);
+            this.mainContainer.Name = "mainContainer";
+            this.mainContainer.Padding = new System.Windows.Forms.Padding(10);
+            this.mainContainer.Size = new System.Drawing.Size(1040, 630);
+            this.mainContainer.TabIndex = 0;
             // 
-            // btnSendMessage
+            // contentPanel
             // 
-            this.btnSendMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSendMessage.Animated = true;
-            this.btnSendMessage.BorderRadius = 8;
-            this.btnSendMessage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSendMessage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSendMessage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSendMessage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnSendMessage.ForeColor = System.Drawing.Color.White;
-            this.btnSendMessage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnSendMessage.Location = new System.Drawing.Point(135, 20);
-            this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(140, 35);
-            this.btnSendMessage.TabIndex = 4;
-            this.btnSendMessage.Text = "إرسال رسالة/تنبيه";
+            this.contentPanel.BackColor = System.Drawing.Color.Transparent;
+            this.contentPanel.Controls.Add(this.propertiesSection);
+            this.contentPanel.Controls.Add(this.detailsSection);
+            this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contentPanel.Location = new System.Drawing.Point(10, 80);
+            this.contentPanel.Name = "contentPanel";
+            this.contentPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.contentPanel.Size = new System.Drawing.Size(1020, 540);
+            this.contentPanel.TabIndex = 1;
+            // 
+            // propertiesSection
+            // 
+            this.propertiesSection.BorderRadius = 12;
+            this.propertiesSection.Controls.Add(this.dgvProperties);
+            this.propertiesSection.Controls.Add(this.paginationPanel);
+            this.propertiesSection.Controls.Add(this.propertiesHeader);
+            this.propertiesSection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.propertiesSection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.propertiesSection.Location = new System.Drawing.Point(0, 180);
+            this.propertiesSection.Name = "propertiesSection";
+            this.propertiesSection.Padding = new System.Windows.Forms.Padding(15);
+            this.propertiesSection.Size = new System.Drawing.Size(1020, 360);
+            this.propertiesSection.TabIndex = 1;
+            // 
+            // dgvProperties
+            // 
+            this.dgvProperties.AllowUserToAddRows = false;
+            this.dgvProperties.AllowUserToDeleteRows = false;
+            this.dgvProperties.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgvProperties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvProperties.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvProperties.ColumnHeadersHeight = 45;
+            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvProperties.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colPropertyId,
+            this.colLocation,
+            this.colNumOfRooms,
+            this.colStatus,
+            this.colAvailability,
+            this.colRentPrice,
+            this.colSalePrice,
+            this.colMortgagePrice,
+            this.colCreatedAt});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProperties.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProperties.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProperties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.dgvProperties.Location = new System.Drawing.Point(15, 55);
+            this.dgvProperties.MultiSelect = false;
+            this.dgvProperties.Name = "dgvProperties";
+            this.dgvProperties.ReadOnly = true;
+            this.dgvProperties.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgvProperties.RowHeadersVisible = false;
+            this.dgvProperties.RowTemplate.Height = 40;
+            this.dgvProperties.Size = new System.Drawing.Size(990, 230);
+            this.dgvProperties.TabIndex = 2;
+            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvProperties.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.dgvProperties.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.dgvProperties.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.dgvProperties.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProperties.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.dgvProperties.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvProperties.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvProperties.ThemeStyle.HeaderStyle.Height = 45;
+            this.dgvProperties.ThemeStyle.ReadOnly = true;
+            this.dgvProperties.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.dgvProperties.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvProperties.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.dgvProperties.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvProperties.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvProperties.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.dgvProperties.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            // 
+            // colPropertyId
+            // 
+            this.colPropertyId.HeaderText = "رقم العقار";
+            this.colPropertyId.Name = "colPropertyId";
+            this.colPropertyId.ReadOnly = true;
+            // 
+            // colLocation
+            // 
+            this.colLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colLocation.HeaderText = "الموقع";
+            this.colLocation.Name = "colLocation";
+            this.colLocation.ReadOnly = true;
+            // 
+            // colNumOfRooms
+            // 
+            this.colNumOfRooms.HeaderText = "عدد الغرف";
+            this.colNumOfRooms.Name = "colNumOfRooms";
+            this.colNumOfRooms.ReadOnly = true;
+            // 
+            // colStatus
+            // 
+            this.colStatus.HeaderText = "الحالة";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.ReadOnly = true;
+            // 
+            // colAvailability
+            // 
+            this.colAvailability.HeaderText = "التوفر";
+            this.colAvailability.Name = "colAvailability";
+            this.colAvailability.ReadOnly = true;
+            // 
+            // colRentPrice
+            // 
+            this.colRentPrice.HeaderText = "سعر الإيجار";
+            this.colRentPrice.Name = "colRentPrice";
+            this.colRentPrice.ReadOnly = true;
+            // 
+            // colSalePrice
+            // 
+            this.colSalePrice.HeaderText = "سعر البيع";
+            this.colSalePrice.Name = "colSalePrice";
+            this.colSalePrice.ReadOnly = true;
+            // 
+            // colMortgagePrice
+            // 
+            this.colMortgagePrice.HeaderText = "سعر الرهن";
+            this.colMortgagePrice.Name = "colMortgagePrice";
+            this.colMortgagePrice.ReadOnly = true;
+            // 
+            // colCreatedAt
+            // 
+            this.colCreatedAt.HeaderText = "تاريخ الإنشاء";
+            this.colCreatedAt.Name = "colCreatedAt";
+            this.colCreatedAt.ReadOnly = true;
+            // 
+            // paginationPanel
+            // 
+            this.paginationPanel.BackColor = System.Drawing.Color.Transparent;
+            this.paginationPanel.Controls.Add(this.lblPageInfo);
+            this.paginationPanel.Controls.Add(this.btnNextPage);
+            this.paginationPanel.Controls.Add(this.btnPrevPage);
+            this.paginationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.paginationPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.paginationPanel.Location = new System.Drawing.Point(15, 285);
+            this.paginationPanel.Name = "paginationPanel";
+            this.paginationPanel.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.paginationPanel.Size = new System.Drawing.Size(990, 60);
+            this.paginationPanel.TabIndex = 1;
+            // 
+            // lblPageInfo
+            // 
+            this.lblPageInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPageInfo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPageInfo.ForeColor = System.Drawing.Color.White;
+            this.lblPageInfo.Location = new System.Drawing.Point(395, 17);
+            this.lblPageInfo.Name = "lblPageInfo";
+            this.lblPageInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblPageInfo.Size = new System.Drawing.Size(200, 25);
+            this.lblPageInfo.TabIndex = 2;
+            this.lblPageInfo.Text = "صفحة 1 من 1";
+            this.lblPageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNextPage.Animated = true;
+            this.btnNextPage.BorderRadius = 8;
+            this.btnNextPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnNextPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.ForeColor = System.Drawing.Color.White;
+            this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnNextPage.Location = new System.Drawing.Point(18, 11);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(52, 36);
+            this.btnNextPage.TabIndex = 1;
+            this.btnNextPage.Text = "←";
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPrevPage
+            // 
+            this.btnPrevPage.Animated = true;
+            this.btnPrevPage.BorderRadius = 8;
+            this.btnPrevPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnPrevPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnPrevPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevPage.ForeColor = System.Drawing.Color.White;
+            this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnPrevPage.Location = new System.Drawing.Point(89, 11);
+            this.btnPrevPage.Name = "btnPrevPage";
+            this.btnPrevPage.Size = new System.Drawing.Size(50, 36);
+            this.btnPrevPage.TabIndex = 0;
+            this.btnPrevPage.Text = "→";
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
+            // 
+            // propertiesHeader
+            // 
+            this.propertiesHeader.BackColor = System.Drawing.Color.Transparent;
+            this.propertiesHeader.Controls.Add(this.lblPropertiesCount);
+            this.propertiesHeader.Controls.Add(this.label8);
+            this.propertiesHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.propertiesHeader.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.propertiesHeader.Location = new System.Drawing.Point(15, 15);
+            this.propertiesHeader.Name = "propertiesHeader";
+            this.propertiesHeader.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.propertiesHeader.Size = new System.Drawing.Size(990, 40);
+            this.propertiesHeader.TabIndex = 0;
+            // 
+            // lblPropertiesCount
+            // 
+            this.lblPropertiesCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPropertiesCount.Font = new System.Drawing.Font("Arial", 10F);
+            this.lblPropertiesCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.lblPropertiesCount.Location = new System.Drawing.Point(670, 10);
+            this.lblPropertiesCount.Name = "lblPropertiesCount";
+            this.lblPropertiesCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblPropertiesCount.Size = new System.Drawing.Size(150, 20);
+            this.lblPropertiesCount.TabIndex = 1;
+            this.lblPropertiesCount.Text = "(0 عقار)";
+            this.lblPropertiesCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(826, 9);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(149, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "العقارات المملوكة";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // detailsSection
+            // 
+            this.detailsSection.BorderRadius = 12;
+            this.detailsSection.Controls.Add(this.txtOwnerID);
+            this.detailsSection.Controls.Add(this.txtAddress);
+            this.detailsSection.Controls.Add(this.label5);
+            this.detailsSection.Controls.Add(this.txtPhone);
+            this.detailsSection.Controls.Add(this.label3);
+            this.detailsSection.Controls.Add(this.txtFullName);
+            this.detailsSection.Controls.Add(this.label2);
+            this.detailsSection.Controls.Add(this.lblSectionTitle);
+            this.detailsSection.Dock = System.Windows.Forms.DockStyle.Top;
+            this.detailsSection.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.detailsSection.Location = new System.Drawing.Point(0, 10);
+            this.detailsSection.Name = "detailsSection";
+            this.detailsSection.Padding = new System.Windows.Forms.Padding(20);
+            this.detailsSection.Size = new System.Drawing.Size(1020, 170);
+            this.detailsSection.TabIndex = 0;
+            // 
+            // txtOwnerID
+            // 
+            this.txtOwnerID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOwnerID.Font = new System.Drawing.Font("Arial", 8F);
+            this.txtOwnerID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.txtOwnerID.Location = new System.Drawing.Point(23, 8);
+            this.txtOwnerID.Name = "txtOwnerID";
+            this.txtOwnerID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtOwnerID.Size = new System.Drawing.Size(100, 15);
+            this.txtOwnerID.TabIndex = 9;
+            this.txtOwnerID.Text = "0";
+            this.txtOwnerID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtOwnerID.Visible = false;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAddress.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtAddress.ForeColor = System.Drawing.Color.White;
+            this.txtAddress.Location = new System.Drawing.Point(106, 110);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtAddress.Size = new System.Drawing.Size(827, 30);
+            this.txtAddress.TabIndex = 6;
+            this.txtAddress.Text = "-";
+            this.txtAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label5.Location = new System.Drawing.Point(939, 110);
+            this.label5.Name = "label5";
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(140, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "العنوان:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPhone.Font = new System.Drawing.Font("Arial", 10F);
+            this.txtPhone.ForeColor = System.Drawing.Color.White;
+            this.txtPhone.Location = new System.Drawing.Point(694, 80);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPhone.Size = new System.Drawing.Size(236, 23);
+            this.txtPhone.TabIndex = 4;
+            this.txtPhone.Text = "-";
+            this.txtPhone.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label3.Location = new System.Drawing.Point(939, 80);
+            this.label3.Name = "label3";
+            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label3.Size = new System.Drawing.Size(140, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "رقم الهاتف:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFullName.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
+            this.txtFullName.ForeColor = System.Drawing.Color.White;
+            this.txtFullName.Location = new System.Drawing.Point(653, 50);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtFullName.Size = new System.Drawing.Size(280, 20);
+            this.txtFullName.TabIndex = 2;
+            this.txtFullName.Text = "-";
+            this.txtFullName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.label2.Location = new System.Drawing.Point(939, 50);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(140, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "الاسم الكامل:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSectionTitle
+            // 
+            this.lblSectionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSectionTitle.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Bold);
+            this.lblSectionTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblSectionTitle.Location = new System.Drawing.Point(902, 8);
+            this.lblSectionTitle.Name = "lblSectionTitle";
+            this.lblSectionTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblSectionTitle.Size = new System.Drawing.Size(140, 22);
+            this.lblSectionTitle.TabIndex = 0;
+            this.lblSectionTitle.Text = "📋 بيانات المالك";
+            this.lblSectionTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // topBar
+            // 
+            this.topBar.BackColor = System.Drawing.Color.Transparent;
+            this.topBar.Controls.Add(this.btnClose);
+            this.topBar.Controls.Add(this.lblOwnerId);
+            this.topBar.Controls.Add(this.lblHeader);
+            this.topBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.topBar.Location = new System.Drawing.Point(10, 10);
+            this.topBar.Name = "topBar";
+            this.topBar.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.topBar.Size = new System.Drawing.Size(1020, 70);
+            this.topBar.TabIndex = 0;
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClose.Animated = true;
             this.btnClose.BorderRadius = 8;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -100,381 +477,103 @@
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.btnClose.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnClose.Location = new System.Drawing.Point(15, 20);
+            this.btnClose.Location = new System.Drawing.Point(15, 17);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(110, 35);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "إغلاق العرض";
+            this.btnClose.Size = new System.Drawing.Size(47, 36);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "✖";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblOwnerId
             // 
             this.lblOwnerId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblOwnerId.AutoSize = true;
-            this.lblOwnerId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblOwnerId.Font = new System.Drawing.Font("Arial", 10F);
             this.lblOwnerId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.lblOwnerId.Location = new System.Drawing.Point(830, 42);
+            this.lblOwnerId.Location = new System.Drawing.Point(770, 40);
             this.lblOwnerId.Name = "lblOwnerId";
-            this.lblOwnerId.Size = new System.Drawing.Size(97, 19);
-            this.lblOwnerId.TabIndex = 2;
-            this.lblOwnerId.Text = "هوية المالك: 0";
             this.lblOwnerId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblOwnerId.Size = new System.Drawing.Size(235, 20);
+            this.lblOwnerId.TabIndex = 1;
+            this.lblOwnerId.Text = "رقم المالك: 0";
+            this.lblOwnerId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblHeader
             // 
             this.lblHeader.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lblHeader.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
-            this.lblHeader.Location = new System.Drawing.Point(753, 5);
+            this.lblHeader.Location = new System.Drawing.Point(700, 8);
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(175, 37);
-            this.lblHeader.TabIndex = 1;
-            this.lblHeader.Text = "[اسم المالك]";
             this.lblHeader.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // pnlDetails
-            // 
-            this.pnlDetails.Controls.Add(this.lblDateJoined);
-            this.pnlDetails.Controls.Add(this.label7);
-            this.pnlDetails.Controls.Add(this.lblContactAddress);
-            this.pnlDetails.Controls.Add(this.label5);
-            this.pnlDetails.Controls.Add(this.lblContactPhone);
-            this.pnlDetails.Controls.Add(this.label3);
-            this.pnlDetails.Controls.Add(this.lblContactEmail);
-            this.pnlDetails.Controls.Add(this.label1);
-            this.pnlDetails.Controls.Add(this.label2);
-            this.pnlDetails.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlDetails.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.pnlDetails.Location = new System.Drawing.Point(0, 70);
-            this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlDetails.Size = new System.Drawing.Size(950, 150);
-            this.pnlDetails.TabIndex = 1;
-            // 
-            // lblDateJoined
-            // 
-            this.lblDateJoined.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDateJoined.AutoSize = true;
-            this.lblDateJoined.BackColor = System.Drawing.Color.Transparent;
-            this.lblDateJoined.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateJoined.ForeColor = System.Drawing.Color.White;
-            this.lblDateJoined.Location = new System.Drawing.Point(741, 115);
-            this.lblDateJoined.Name = "lblDateJoined";
-            this.lblDateJoined.Size = new System.Drawing.Size(117, 19);
-            this.lblDateJoined.TabIndex = 9;
-            this.lblDateJoined.Text = "[DD/MM/YYYY]";
-            this.lblDateJoined.RightToLeft = System.Windows.Forms.RightToLeft.No; // Date is usually LTR
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(845, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 19);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "تاريخ التسجيل:";
-            this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // lblContactAddress
-            // 
-            this.lblContactAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblContactAddress.AutoSize = true;
-            this.lblContactAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblContactAddress.ForeColor = System.Drawing.Color.White;
-            this.lblContactAddress.Location = new System.Drawing.Point(407, 85);
-            this.lblContactAddress.Name = "lblContactAddress";
-            this.lblContactAddress.Size = new System.Drawing.Size(76, 19);
-            this.lblContactAddress.TabIndex = 7;
-            this.lblContactAddress.Text = "[العنوان]";
-            this.lblContactAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(882, 85);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 19);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "العنوان:";
-            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // lblContactPhone
-            // 
-            this.lblContactPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblContactPhone.Animated = true;
-            this.lblContactPhone.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactPhone.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.lblContactPhone.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.lblContactPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactPhone.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.lblContactPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblContactPhone.ForeColor = System.Drawing.Color.White;
-            this.lblContactPhone.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactPhone.HoverState.ForeColor = System.Drawing.Color.LightBlue;
-            this.lblContactPhone.Location = new System.Drawing.Point(730, 52);
-            this.lblContactPhone.Name = "lblContactPhone";
-            this.lblContactPhone.Size = new System.Drawing.Size(100, 25);
-            this.lblContactPhone.TabIndex = 5;
-            this.lblContactPhone.Text = "[Phone]";
-            this.lblContactPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Right; // Right alignment for RTL display of LTR number
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(882, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "الهاتف:";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // lblContactEmail
-            // 
-            this.lblContactEmail.Animated = true;
-            this.lblContactEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblContactEmail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.lblContactEmail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.lblContactEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactEmail.DisabledState.ForeColor = System.Drawing.Color.White;
-            this.lblContactEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.lblContactEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblContactEmail.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(33)))));
-            this.lblContactEmail.HoverState.ForeColor = System.Drawing.Color.LightBlue;
-            this.lblContactEmail.Location = new System.Drawing.Point(15, 52);
-            this.lblContactEmail.Name = "lblContactEmail";
-            this.lblContactEmail.Size = new System.Drawing.Size(220, 25);
-            this.lblContactEmail.TabIndex = 3;
-            this.lblContactEmail.Text = "[Email]";
-            this.lblContactEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left; // Email is LTR
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(234, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "الإيميل:";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(821, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 21);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "بيانات الاتصال";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // pnlProperties
-            // 
-            this.pnlProperties.Controls.Add(this.btnViewContract);
-            this.pnlProperties.Controls.Add(this.lblPropertyCount);
-            this.pnlProperties.Controls.Add(this.label9);
-            this.pnlProperties.Controls.Add(this.dgvProperties);
-            this.pnlProperties.Controls.Add(this.label10);
-            this.pnlProperties.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProperties.Location = new System.Drawing.Point(0, 220);
-            this.pnlProperties.Name = "pnlProperties";
-            this.pnlProperties.Padding = new System.Windows.Forms.Padding(15);
-            this.pnlProperties.Size = new System.Drawing.Size(950, 380);
-            this.pnlProperties.TabIndex = 2;
-            // 
-            // lblPropertyCount
-            // 
-            this.lblPropertyCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPropertyCount.AutoSize = true;
-            this.lblPropertyCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblPropertyCount.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.lblPropertyCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.lblPropertyCount.Location = new System.Drawing.Point(600, 17);
-            this.lblPropertyCount.Name = "lblPropertyCount";
-            this.lblPropertyCount.Size = new System.Drawing.Size(125, 19);
-            this.lblPropertyCount.TabIndex = 13;
-            this.lblPropertyCount.Text = "[عدد العقارات N]";
-            this.lblPropertyCount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(727, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(209, 21);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "الوحدات العقارية المملوكة";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // dgvProperties
-            // 
-            this.dgvProperties.AllowUserToAddRows = false;
-            this.dgvProperties.AllowUserToDeleteRows = false;
-            this.dgvProperties.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.dgvProperties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProperties.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProperties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProperties.ColumnHeadersHeight = 40;
-            this.dgvProperties.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(42)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProperties.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvProperties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.dgvProperties.Location = new System.Drawing.Point(15, 45);
-            this.dgvProperties.MultiSelect = false;
-            this.dgvProperties.Name = "dgvProperties";
-            this.dgvProperties.ReadOnly = true;
-            this.dgvProperties.RowHeadersVisible = false;
-            this.dgvProperties.RowTemplate.Height = 35;
-            this.dgvProperties.Size = new System.Drawing.Size(920, 320);
-            this.dgvProperties.TabIndex = 3;
-            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(42)))));
-            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvProperties.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvProperties.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
-            this.dgvProperties.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.dgvProperties.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.dgvProperties.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvProperties.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dgvProperties.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvProperties.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvProperties.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvProperties.ThemeStyle.ReadOnly = true;
-            this.dgvProperties.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(30)))), ((int)(((byte)(42)))));
-            this.dgvProperties.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvProperties.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.dgvProperties.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvProperties.ThemeStyle.RowsStyle.Height = 35;
-            this.dgvProperties.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.dgvProperties.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 21);
-            this.label10.TabIndex = 2;
-            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            // 
-            // btnViewContract
-            // 
-            this.btnViewContract.Animated = true;
-            this.btnViewContract.BorderRadius = 8;
-            this.btnViewContract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewContract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewContract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewContract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewContract.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.btnViewContract.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.btnViewContract.ForeColor = System.Drawing.Color.White;
-            this.btnViewContract.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnViewContract.Location = new System.Drawing.Point(15, 10);
-            this.btnViewContract.Name = "btnViewContract";
-            this.btnViewContract.Size = new System.Drawing.Size(130, 30);
-            this.btnViewContract.TabIndex = 14;
-            this.btnViewContract.Text = "عرض بيانات العقار";
+            this.lblHeader.Size = new System.Drawing.Size(305, 30);
+            this.lblHeader.TabIndex = 0;
+            this.lblHeader.Text = "تفاصيل المالك";
+            this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmOwnerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
-            this.ClientSize = new System.Drawing.Size(950, 600);
-            this.Controls.Add(this.pnlProperties);
-            this.Controls.Add(this.pnlDetails);
-            this.Controls.Add(this.pnlHeader);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.mainContainer);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "frmOwnerDetails";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "تفاصيل المالك";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
-            this.pnlDetails.ResumeLayout(false);
-            this.pnlDetails.PerformLayout();
-            this.pnlProperties.ResumeLayout(false);
-            this.pnlProperties.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "تفاصيل المالك";
+            this.Load += new System.EventHandler(this.frmOwnerDetails_Load);
+            this.mainContainer.ResumeLayout(false);
+            this.contentPanel.ResumeLayout(false);
+            this.propertiesSection.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
+            this.paginationPanel.ResumeLayout(false);
+            this.propertiesHeader.ResumeLayout(false);
+            this.detailsSection.ResumeLayout(false);
+            this.topBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Panel pnlHeader;
-        private System.Windows.Forms.Label lblOwnerId;
+        private Guna.UI2.WinForms.Guna2Panel mainContainer;
+        private Guna.UI2.WinForms.Guna2Panel topBar;
         private System.Windows.Forms.Label lblHeader;
-        private Guna.UI2.WinForms.Guna2Panel pnlDetails;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Panel pnlProperties;
+        private System.Windows.Forms.Label lblOwnerId;
         private Guna.UI2.WinForms.Guna2Button btnClose;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Button lblContactEmail;
-        private Guna.UI2.WinForms.Guna2Button lblContactPhone;
+        private Guna.UI2.WinForms.Guna2Panel contentPanel;
+        private Guna.UI2.WinForms.Guna2Panel detailsSection;
+        private System.Windows.Forms.Label lblSectionTitle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label txtFullName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblContactAddress;
+        private System.Windows.Forms.Label txtPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblDateJoined;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label txtAddress;
+        private System.Windows.Forms.Label txtOwnerID;
+        private Guna.UI2.WinForms.Guna2Panel propertiesSection;
+        private Guna.UI2.WinForms.Guna2Panel propertiesHeader;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPropertiesCount;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProperties;
-        private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2Button btnSendMessage;
-        private System.Windows.Forms.Label lblPropertyCount;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2Button btnViewContract; // Renamed from btnViewContract
+        private Guna.UI2.WinForms.Guna2Panel paginationPanel;
+        private Guna.UI2.WinForms.Guna2Button btnPrevPage;
+        private Guna.UI2.WinForms.Guna2Button btnNextPage;
+        private System.Windows.Forms.Label lblPageInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPropertyId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLocation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumOfRooms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAvailability;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRentPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMortgagePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCreatedAt;
     }
 }

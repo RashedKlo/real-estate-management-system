@@ -1,21 +1,19 @@
-﻿
-using System;
-using System.Threading.Tasks;
-using RealEstateManagement.Data.DTOs.Owners.Queries;
-using RealEstateManagement.Data.Results;
-using RealEstateManagement.Data.Settings;
+﻿using System;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.DTOs.Owners.Queries;
 using RealEstateManagement.Data.Helpers;
 using RealEstateManagement.Data.Repositories.Owner.Helpers;
-using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.Results;
+using RealEstateManagement.Data.Settings;
 
 namespace RealEstateManagement.Data.Repositories.Owner.Queries
 {
     public class GetOwnerQuery
     {
         private const string GetOwnerSql = @"
-            EXEC [dbo].[sp_GetOwner] 
-                @OwnerId";
+            EXEC [dbo].[sp_GetOwner] @OwnerId";
 
         public static async Task<OperationResult<OwnerGetResponseDto>> ExecuteAsync(
             OwnerGetRequestDto dto,
@@ -23,38 +21,43 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
         {
             if (dto == null || dto.OwnerId <= 0)
             {
-                logger.LogError("GetOwnerQuery received invalid Owner ID: {OwnerId}", dto?.OwnerId);
-                return OperationResult<OwnerGetResponseDto>.Failure("Owner ID is required and must be a positive integer");
+                logger.LogError("GetOwnerQuery received invalid OwnerId: {OwnerId}", dto?.OwnerId);
+                return OperationResult<OwnerGetResponseDto>.Failure("Owner ID is required and must be positive");
             }
 
-            logger.LogInformation("Executing Owner retrieval for OwnerId: {OwnerId}", dto.OwnerId);
+            logger.LogInformation("Starting owner retrieval - OwnerId: {OwnerId}", dto.OwnerId);
 
             try
             {
-                 var connection = new SqlConnection(DBSettings.connectionString);
-                await connection.OpenAsync();
+                using (var connection = new SqlConnection(DBSettings.connectionString))
+                {
+                    await connection.OpenAsync();
+                    logger.LogInformation("Database connection opened for retrieval - OwnerId: {OwnerId}", dto.OwnerId);
 
-                 var command = CreateCommand(connection, dto);
-                 var reader = await command.ExecuteReaderAsync();
-
-                reader.Close();
-                connection.Close();
-                return await ProcessResultAsync(reader, logger, dto.OwnerId);
+                    using (var command = CreateCommand(connection, dto))
+                    {
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            var result = await ProcessResultAsync(reader, logger, dto.OwnerId);
+                            logger.LogInformation("Owner retrieval process completed - OwnerId: {OwnerId}", dto.OwnerId);
+                            return result;
+                        }
+                    }
+                }
             }
-            catch (SqlException ex) when (ex.Number >= 2 && ex.Number<= 53)
+            catch (SqlException ex) when (ex.Number >= 2 && ex.Number <= 53)
             {
-                logger.LogError(ex, "Database connection failed during Owner retrieval for OwnerId {OwnerId}", dto.OwnerId);
+                logger.LogError(ex, "Database connection error during owner retrieval - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerGetResponseDto>.Failure("Database connection failed. Please try again.");
             }
             catch (SqlException ex)
             {
-                logger.LogError(ex, "Database error during Owner retrieval for OwnerId {OwnerId}. Error: {Error}",
-                    dto.OwnerId, ex.Message);
+                logger.LogError(ex, "SQL error during owner retrieval - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerGetResponseDto>.Failure("Database operation failed");
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Unexpected error during Owner retrieval for OwnerId {OwnerId}", dto.OwnerId);
+                logger.LogError(ex, "Unexpected error during owner retrieval - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerGetResponseDto>.Failure("Owner retrieval failed due to system error");
             }
         }
@@ -69,41 +72,28 @@ namespace RealEstateManagement.Data.Repositories.Owner.Queries
         private static async Task<OperationResult<OwnerGetResponseDto>> ProcessResultAsync(
             SqlDataReader reader,
             ILogger logger,
-            int OwnerId)
+            int ownerId)
         {
-            if (!await reader.ReadAsync())
+            try
             {
-                logger.LogWarning("No result returned from Owner retrieval procedure for OwnerId {OwnerId}", OwnerId);
-                return OperationResult<OwnerGetResponseDto>.Failure("Owner retrieval procedure returned no result");
-            }
-
-            var status = reader.GetValueOrDefault<string>("Status") ?? "Error";
-            var message = reader.GetValueOrDefault<string>("Message") ?? "Owner retrieval completed";
-
-            if (status != "SUCCESS")
-            {
-                var errorNumber = reader.GetValueOrDefault<int>("ErrorNumber");
-                logger.LogWarning("Owner retrieval failed for OwnerId {OwnerId}: {Message} (Error: {ErrorNumber})",
-                    OwnerId, message, errorNumber);
-                return OperationResult<OwnerGetResponseDto>.Failure(message);
-            }
-            else
-            {
-                try
+                if (!await reader.ReadAsync())
                 {
-                    var responseDto = OwnerMapper.MapGetResponseFromReader(reader);
-
-                    logger.LogInformation("Owner retrieved successfully - OwnerId: {OwnerId}",
-                        OwnerId);
-
-                    return OperationResult<OwnerGetResponseDto>.Success(responseDto, message);
+                    logger.LogWarning("Get procedure returned no rows for OwnerId: {OwnerId}", ownerId);
+                    return OperationResult<OwnerGetResponseDto>.Failure("No result returned from retrieval procedure");
                 }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Error mapping Owner retrieval result for OwnerId {OwnerId}",
-                        OwnerId);
-                    return OperationResult<OwnerGetResponseDto>.Failure("Failed to process Owner retrieval result");
-                }
+
+                string status = reader.GetValueOrDefault<string>("Status") ?? "ERROR";
+                string message = reader.GetValueOrDefault<string>("Message") ?? "Owner retrieval completed";
+
+                var responseDto = OwnerMapper.MapGetResponseFromReader(reader);
+                logger.LogInformation("Owner retrieved successfully - OwnerId: {OwnerId}", ownerId);
+
+                return OperationResult<OwnerGetResponseDto>.Success(responseDto, message);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error processing retrieval result - OwnerId: {OwnerId}", ownerId);
+                return OperationResult<OwnerGetResponseDto>.Failure("Failed to process owner retrieval result");
             }
         }
     }

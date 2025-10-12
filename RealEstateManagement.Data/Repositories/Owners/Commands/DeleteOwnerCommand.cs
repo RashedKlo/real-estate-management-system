@@ -1,20 +1,19 @@
 ﻿using System;
-using System.Threading.Tasks;
-using RealEstateManagement.Data.DTOs.Owners.Delete;
-using RealEstateManagement.Data.Results;
-using RealEstateManagement.Data.Settings;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.DTOs.Owners.Delete;
 using RealEstateManagement.Data.Helpers;
 using RealEstateManagement.Data.Repositories.Owner.Helpers;
-using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.Results;
+using RealEstateManagement.Data.Settings;
 
 namespace RealEstateManagement.Data.Repositories.Owner.Commands
 {
     public class DeleteOwnerCommand
     {
         private const string DeleteOwnerSql = @"
-            EXEC [dbo].[sp_DeleteOwner] 
-                @OwnerId";
+            EXEC [dbo].[sp_DeleteOwner] @OwnerId";
 
         public static async Task<OperationResult<OwnerDeleteResponseDto>> ExecuteAsync(
             OwnerDeleteRequestDto dto,
@@ -22,40 +21,43 @@ namespace RealEstateManagement.Data.Repositories.Owner.Commands
         {
             if (dto == null)
             {
-                logger.LogError("DeleteOwnerCommand received null Owner data");
+                logger.LogError("DeleteOwnerCommand received null OwnerDeleteRequestDto");
                 return OperationResult<OwnerDeleteResponseDto>.Failure("Owner data is required");
             }
 
-            logger.LogInformation("Executing Owner deletion for OwnerId: {OwnerId}",
-                dto.OwnerId);
+            logger.LogInformation("Starting owner deletion - OwnerId: {OwnerId}", dto.OwnerId);
 
             try
             {
-                var connection = new SqlConnection(DBSettings.connectionString);
-                await connection.OpenAsync();
+                using (var connection = new SqlConnection(DBSettings.connectionString))
+                {
+                    await connection.OpenAsync();
+                    logger.LogInformation("Database connection opened for deletion - OwnerId: {OwnerId}", dto.OwnerId);
 
-                var command = CreateCommand(connection, dto);
-                var reader = await command.ExecuteReaderAsync();
-                reader.Close();
-                connection.Close();
-                return await ProcessResultAsync(reader, logger, dto.OwnerId);
+                    using (var command = CreateCommand(connection, dto))
+                    {
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            var result = await ProcessResultAsync(reader, logger, dto.OwnerId);
+                            logger.LogInformation("Owner deletion process completed - OwnerId: {OwnerId}", dto.OwnerId);
+                            return result;
+                        }
+                    }
+                }
             }
             catch (SqlException ex) when (ex.Number >= 2 && ex.Number <= 53)
             {
-                logger.LogError(ex, "Database connection failed during Owner deletion for OwnerId {OwnerId}",
-                    dto.OwnerId);
+                logger.LogError(ex, "Database connection error during owner deletion - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerDeleteResponseDto>.Failure("Database connection failed. Please try again.");
             }
             catch (SqlException ex)
             {
-                logger.LogError(ex, "Database error during Owner deletion for OwnerId {OwnerId}. Error: {Error}",
-                    dto.OwnerId, ex.Message);
+                logger.LogError(ex, "SQL error during owner deletion - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerDeleteResponseDto>.Failure("Database operation failed");
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Unexpected error during Owner deletion for OwnerId {OwnerId}",
-                    dto.OwnerId);
+                logger.LogError(ex, "Unexpected error during owner deletion - OwnerId: {OwnerId}", dto.OwnerId);
                 return OperationResult<OwnerDeleteResponseDto>.Failure("Owner deletion failed due to system error");
             }
         }
@@ -70,44 +72,29 @@ namespace RealEstateManagement.Data.Repositories.Owner.Commands
         private static async Task<OperationResult<OwnerDeleteResponseDto>> ProcessResultAsync(
             SqlDataReader reader,
             ILogger logger,
-            int OwnerId)
+            int ownerId)
         {
-            if (!await reader.ReadAsync())
+            try
             {
-                logger.LogWarning("No result returned from Owner deletion procedure for OwnerId {OwnerId}",
-                    OwnerId);
-                return OperationResult<OwnerDeleteResponseDto>.Failure("Owner deletion procedure returned no result");
-            }
-
-            var status = reader.GetValueOrDefault<string>("Status") ?? "Error";
-            var message = reader.GetValueOrDefault<string>("Message") ?? "Owner deletion completed";
-
-            if (status != "SUCCESS")
-            {
-                var errorNumber = reader.GetValueOrDefault<int>("ErrorNumber");
-                logger.LogWarning("Owner deletion failed for OwnerId {OwnerId}: {Message} (Error: {ErrorNumber})",
-                    OwnerId, message, errorNumber);
-                return OperationResult<OwnerDeleteResponseDto>.Failure(message);
-            }
-            else
-            {
-                try
+                if (!await reader.ReadAsync())
                 {
-                    var responseDto = OwnerMapper.MapDeleteResponseFromReader(reader);
-
-                    logger.LogInformation("Owner deleted successfully - OwnerId: {OwnerId}",
-                        OwnerId);
-
-                    return OperationResult<OwnerDeleteResponseDto>.Success(responseDto, message);
+                    logger.LogWarning("Delete procedure returned no rows for OwnerId: {OwnerId}", ownerId);
+                    return OperationResult<OwnerDeleteResponseDto>.Failure("No result returned from deletion procedure");
                 }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Error mapping Owner deletion result for OwnerId {OwnerId}",
-                        OwnerId);
-                    return OperationResult<OwnerDeleteResponseDto>.Failure("Failed to process Owner deletion result");
-                }
+
+                string status = reader.GetValueOrDefault<string>("Status") ?? "ERROR";
+                string message = reader.GetValueOrDefault<string>("Message") ?? "Owner deletion completed";
+
+                var responseDto = OwnerMapper.MapDeleteResponseFromReader(reader);
+                logger.LogInformation("Owner deleted successfully - OwnerId: {OwnerId}", ownerId);
+
+                return OperationResult<OwnerDeleteResponseDto>.Success(responseDto, message);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error processing deletion result - OwnerId: {OwnerId}", ownerId);
+                return OperationResult<OwnerDeleteResponseDto>.Failure("Failed to process owner deletion result");
             }
         }
     }
 }
-   

@@ -19,10 +19,5 @@ namespace RealEstateManagement.Data.Models
         public int OwnerId { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        // Owner Info
-        public string OwnerFullName { get; set; }
-        public string OwnerPhoneNumber { get; set; }
-        public string OwnerAddress { get; set; }
-        public DateTime OwnerCreatedAt { get; set; }
     }
 }

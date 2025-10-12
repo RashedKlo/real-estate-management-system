@@ -37,10 +37,6 @@ F:\RealEstateManagement\RealEstateManagement.Services\bin\Debug\Microsoft.Extens
 F:\RealEstateManagement\RealEstateManagement.Services\bin\Debug\Microsoft.Extensions.Options.xml
 F:\RealEstateManagement\RealEstateManagement.Services\bin\Debug\Microsoft.Extensions.Primitives.xml
 F:\RealEstateManagement\RealEstateManagement.Services\bin\Debug\System.ValueTuple.xml
-F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.csproj.AssemblyReference.cache
-F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.csproj.CoreCompileInputs.cache
-F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.dll
-F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.pdb
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\RealEstateManagement.Services.dll.config
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\RealEstateManagement.Services.dll
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\RealEstateManagement.Services.pdb
@@ -75,4 +71,8 @@ F:\real-estate-management\RealEstateManagement.Services\bin\Debug\System.Numeric
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\System.Threading.Tasks.Extensions.xml
 F:\real-estate-management\RealEstateManagement.Services\bin\Debug\System.ValueTuple.xml
+F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.csproj.AssemblyReference.cache
+F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.csproj.CoreCompileInputs.cache
 F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.csproj.CopyComplete
+F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.dll
+F:\real-estate-management\RealEstateManagement.Services\obj\Debug\RealEstateManagement.Services.pdb

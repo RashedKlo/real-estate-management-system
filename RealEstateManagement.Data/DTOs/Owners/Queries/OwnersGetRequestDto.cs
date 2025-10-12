@@ -10,5 +10,7 @@ namespace RealEstateManagement.Data.DTOs.Owners.Queries
     {
         public int Page { get; set; } = 1;
         public int Limit { get; set; } = 10;
+        public string FullName { get; set; } = string.Empty;
+        public string PhoneNumber { get; set; } = string.Empty;
     }
 }

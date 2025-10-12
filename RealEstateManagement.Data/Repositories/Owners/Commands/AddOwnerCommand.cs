@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Threading.Tasks;
-using RealEstateManagement.Data.DTOs.Owners.Create;
-using RealEstateManagement.Data.Results;
-using RealEstateManagement.Data.Settings;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.DTOs.Owners.Create;
 using RealEstateManagement.Data.Helpers;
 using RealEstateManagement.Data.Repositories.Owner.Helpers;
-using Microsoft.Extensions.Logging;
+using RealEstateManagement.Data.Results;
+using RealEstateManagement.Data.Settings;
 
 namespace RealEstateManagement.Data.Repositories.Owner.Commands
 {
@@ -22,42 +22,43 @@ namespace RealEstateManagement.Data.Repositories.Owner.Commands
         {
             if (dto == null)
             {
-                logger.LogError("AddOwnerCommand received null Owner data");
+                logger.LogError("AddOwnerCommand received null OwnerCreateRequestDto");
                 return OperationResult<OwnerCreateResponseDto>.Failure("Owner data is required");
             }
 
-            logger.LogInformation("Executing Owner creation for FullName: {FullName}, PhoneNumber: {PhoneNumber}",
-                dto.FullName, dto.PhoneNumber);
+            logger.LogInformation("Starting owner creation - FullName: {FullName}", dto.FullName);
 
             try
             {
-                var connection = new SqlConnection(DBSettings.connectionString);
+                using (var connection = new SqlConnection(DBSettings.connectionString))
+                {
+                    await connection.OpenAsync();
+                    logger.LogInformation("Database connection opened for creation - FullName: {FullName}", dto.FullName);
 
-                await connection.OpenAsync();
-
-                var command = CreateCommand(connection, dto);
-                var reader = await command.ExecuteReaderAsync();
-
-                reader.Close();
-                connection.Close();
-                return await ProcessResultAsync(reader, logger, dto.FullName, dto.PhoneNumber);
+                    using (var command = CreateCommand(connection, dto))
+                    {
+                        using (var reader = await command.ExecuteReaderAsync())
+                        {
+                            var result = await ProcessResultAsync(reader, logger, dto.FullName);
+                            logger.LogInformation("Owner creation process completed - FullName: {FullName}", dto.FullName);
+                            return result;
+                        }
+                    }
+                }
             }
             catch (SqlException ex) when (ex.Number >= 2 && ex.Number <= 53)
             {
-                logger.LogError(ex, "Database connection failed during Owner creation for FullName {FullName}, PhoneNumber {PhoneNumber}",
-                    dto.FullName, dto.PhoneNumber);
+                logger.LogError(ex, "Database connection error during owner creation - FullName: {FullName}", dto.FullName);
                 return OperationResult<OwnerCreateResponseDto>.Failure("Database connection failed. Please try again.");
             }
             catch (SqlException ex)
             {
-                logger.LogError(ex, "Database error during Owner creation for FullName {FullName}, PhoneNumber {PhoneNumber}. Error: {Error}",
-                    dto.FullName, dto.PhoneNumber, ex.Message);
+                logger.LogError(ex, "SQL error during owner creation - FullName: {FullName}", dto.FullName);
                 return OperationResult<OwnerCreateResponseDto>.Failure("Database operation failed");
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Unexpected error during Owner creation for FullName {FullName}, PhoneNumber {PhoneNumber}",
-                    dto.FullName, dto.PhoneNumber);
+                logger.LogError(ex, "Unexpected error during owner creation - FullName: {FullName}", dto.FullName);
                 return OperationResult<OwnerCreateResponseDto>.Failure("Owner creation failed due to system error");
             }
         }
@@ -74,43 +75,29 @@ namespace RealEstateManagement.Data.Repositories.Owner.Commands
         private static async Task<OperationResult<OwnerCreateResponseDto>> ProcessResultAsync(
             SqlDataReader reader,
             ILogger logger,
-            string fullName,
-            string phoneNumber)
+            string fullName)
         {
-            if (!await reader.ReadAsync())
+            try
             {
-                logger.LogWarning("No result returned from Owner creation procedure for FullName {FullName}, PhoneNumber {PhoneNumber}",
-                    fullName, phoneNumber);
-                return OperationResult<OwnerCreateResponseDto>.Failure("Owner creation procedure returned no result");
-            }
-
-            var status = reader.GetValueOrDefault<string>("Status") ?? "Error";
-            var message = reader.GetValueOrDefault<string>("Message") ?? "Owner creation completed";
-
-            if (status != "SUCCESS")
-            {
-                var errorNumber = reader.GetValueOrDefault<int>("ErrorNumber");
-                logger.LogWarning("Owner creation failed for FullName {FullName}, PhoneNumber {PhoneNumber}: {Message} (Error: {ErrorNumber})",
-                    fullName, phoneNumber, message, errorNumber);
-                return OperationResult<OwnerCreateResponseDto>.Failure(message);
-            }
-            else
-            {
-                try
+                if (!await reader.ReadAsync())
                 {
-                    var responseDto = OwnerMapper.MapCreateResponseFromReader(reader);
-
-                    logger.LogInformation("Owner created successfully - OwnerId: {OwnerId}, FullName: {FullName}, PhoneNumber: {PhoneNumber}",
-                        responseDto.OwnerId, fullName, phoneNumber);
-
-                    return OperationResult<OwnerCreateResponseDto>.Success(responseDto, message);
+                    logger.LogWarning("Create procedure returned no rows for FullName: {FullName}", fullName);
+                    return OperationResult<OwnerCreateResponseDto>.Failure("No result returned from creation procedure");
                 }
-                catch (Exception ex)
-                {
-                    logger.LogError(ex, "Error mapping Owner creation result for FullName {FullName}, PhoneNumber {PhoneNumber}",
-                        fullName, phoneNumber);
-                    return OperationResult<OwnerCreateResponseDto>.Failure("Failed to process Owner creation result");
-                }
-            } }
+
+                string status = reader.GetValueOrDefault<string>("Status") ?? "ERROR";
+                string message = reader.GetValueOrDefault<string>("Message") ?? "Owner creation completed";
+
+                var responseDto = OwnerMapper.MapCreateResponseFromReader(reader);
+                logger.LogInformation("Owner created successfully - OwnerId: {OwnerId}", responseDto.OwnerId);
+
+                return OperationResult<OwnerCreateResponseDto>.Success(responseDto, message);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error processing creation result - FullName: {FullName}", fullName);
+                return OperationResult<OwnerCreateResponseDto>.Failure("Failed to process owner creation result");
+            }
         }
     }
+}

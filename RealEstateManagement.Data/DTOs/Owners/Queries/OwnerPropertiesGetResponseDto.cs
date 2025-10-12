@@ -9,6 +9,12 @@ namespace RealEstateManagement.Data.DTOs.Owners.Queries
     public class OwnerPropertiesGetResponseDto
     {
         public List<OwnerPropertyModel> Properties { get; set; }
+
+        // Owner Info
+        public string OwnerFullName { get; set; }
+        public string OwnerPhoneNumber { get; set; }
+        public string OwnerAddress { get; set; }
+        public DateTime OwnerCreatedAt { get; set; }
         public int CurrentPage { get; set; }
         public int PageSize { get; set; }
         public int TotalRecords { get; set; }
