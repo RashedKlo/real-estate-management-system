@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using RealEstateManagement.Data.DTOs.Properties.Create;
+using RealEstateManagement.Data.DTOs.Properties.Delete;
+using RealEstateManagement.Data.DTOs.Properties.Queries;
+using RealEstateManagement.Data.DTOs.Properties.Update;
+using RealEstateManagement.Data.Results;
 
 namespace RealEstateManagement.Services.Interfaces
 {
-    class IPropertiesService
+    public interface IPropertiesService
     {
+        Task<OperationResult<PropertyCreateResponseDto>> AddPropertyAsync(PropertyCreateRequestDto dto);
+        Task<OperationResult<PropertyUpdateResponseDto>> UpdatePropertyAsync(PropertyUpdateRequestDto dto);
+        Task<OperationResult<PropertyDeleteResponseDto>> DeletePropertyAsync(PropertyDeleteRequestDto dto);
+        Task<OperationResult<PropertyGetResponseDto>> GetPropertyAsync(PropertyGetRequestDto dto);
+        Task<OperationResult<PropertiesGetResponseDto>> GetPropertiesAsync(PropertiesGetRequestDto dto);
     }
 }

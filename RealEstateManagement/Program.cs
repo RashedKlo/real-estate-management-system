@@ -4,8 +4,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using RealEstateManagement.Services.Client;
 using RealEstateManagement.Services.Owner;
+using RealEstateManagement.Services.Properties;
 using RealEstateManagement.Data.Repositories.Client;
 using RealEstateManagement.Data.Repositories.Owner;
+using RealEstateManagement.Data.Repositories.Properties;
 using RealEstateManagement.Services.Interfaces;
 using RealEstateManagement.Data.Interfaces;
 
@@ -56,8 +58,16 @@ namespace RealEstateManagement
             // Register Owners Repository (if not already registered)
             services.AddScoped<IOwnersRepository, OwnerRepository>();
 
+
+            // Register Owners Service
+            services.AddScoped<IPropertiesService,PropertiesService >();
+
+            // Register Owners Repository (if not already registered)
+            services.AddScoped<IPropertiesRepository, PropertiesRepository>();
+
             // Register forms
             services.AddTransient<frmSplash>();
+            services.AddTransient<frmDashboard>();
             services.AddTransient<frmMain>();
             //Clients
             services.AddTransient<frmClients>();
@@ -68,6 +78,12 @@ namespace RealEstateManagement
             services.AddTransient<frmOwners>();
             services.AddTransient<frmEditOwner>();
             services.AddTransient<frmOwnerDetails>();
+            services.AddTransient<frmSearchOwner>();
+
+            //Properties
+            services.AddTransient<frmPropertiesList>();
+            services.AddTransient<frmAddEditProperty>();
+            services.AddTransient<frmPropertyDetails>();
         }
 
 

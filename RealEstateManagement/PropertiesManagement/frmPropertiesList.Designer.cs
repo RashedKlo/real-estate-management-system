@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnViewDetails = new Guna.UI2.WinForms.Guna2Button();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddNewProperty = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -41,22 +40,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
-            this.txtRooms = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterRooms = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.cmbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbFilterStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtAreaTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterAreaTo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtAreaFrom = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPriceTo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterAreaFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterPriceTo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPriceFrom = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterPriceFrom = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbTransactionType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmbFilterAvailability = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbPropertyType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblPropertyType = new System.Windows.Forms.Label();
-            this.txtCitySearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtFilterLocation = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblCity = new System.Windows.Forms.Label();
             this.dgvProperties = new Guna.UI2.WinForms.Guna2DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,15 +63,19 @@
             this.colTransaction = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bottomBar = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblPageInfo = new System.Windows.Forms.Label();
+            this.btnNextPage = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrevPage = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.filterPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).BeginInit();
+            this.bottomBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.btnViewDetails);
-            this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.btnEdit);
             this.guna2Panel1.Controls.Add(this.btnAddNewProperty);
             this.guna2Panel1.Controls.Add(this.lblTitle);
@@ -86,7 +87,7 @@
             // 
             // btnViewDetails
             // 
-            this.btnViewDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnViewDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnViewDetails.Animated = true;
             this.btnViewDetails.BorderRadius = 8;
@@ -103,30 +104,11 @@
             this.btnViewDetails.Size = new System.Drawing.Size(110, 36);
             this.btnViewDetails.TabIndex = 6;
             this.btnViewDetails.Text = "عرض التفاصيل";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnDelete.Animated = true;
-            this.btnDelete.BorderRadius = 8;
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(131, 23);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(90, 36);
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Text = "حذف";
+            this.btnViewDetails.Click += new System.EventHandler(this.btnView_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnEdit.Animated = true;
             this.btnEdit.BorderRadius = 8;
@@ -137,15 +119,16 @@
             this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(227, 23);
+            this.btnEdit.Location = new System.Drawing.Point(131, 23);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 36);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "تعديل";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAddNewProperty
             // 
-            this.btnAddNewProperty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.btnAddNewProperty.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAddNewProperty.Animated = true;
             this.btnAddNewProperty.BorderRadius = 8;
@@ -157,11 +140,12 @@
             this.btnAddNewProperty.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddNewProperty.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewProperty.ForeColor = System.Drawing.Color.White;
-            this.btnAddNewProperty.Location = new System.Drawing.Point(323, 23);
+            this.btnAddNewProperty.Location = new System.Drawing.Point(227, 23);
             this.btnAddNewProperty.Name = "btnAddNewProperty";
             this.btnAddNewProperty.Size = new System.Drawing.Size(97, 36);
             this.btnAddNewProperty.TabIndex = 3;
             this.btnAddNewProperty.Text = "إضافة جديد";
+            this.btnAddNewProperty.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblTitle
             // 
@@ -179,22 +163,20 @@
             this.filterPanel.Controls.Add(this.label4);
             this.filterPanel.Controls.Add(this.btnRefresh);
             this.filterPanel.Controls.Add(this.btnSearch);
-            this.filterPanel.Controls.Add(this.txtRooms);
+            this.filterPanel.Controls.Add(this.txtFilterRooms);
             this.filterPanel.Controls.Add(this.label6);
-            this.filterPanel.Controls.Add(this.cmbStatus);
+            this.filterPanel.Controls.Add(this.cmbFilterStatus);
             this.filterPanel.Controls.Add(this.label7);
-            this.filterPanel.Controls.Add(this.txtAreaTo);
+            this.filterPanel.Controls.Add(this.txtFilterAreaTo);
             this.filterPanel.Controls.Add(this.label5);
-            this.filterPanel.Controls.Add(this.txtAreaFrom);
-            this.filterPanel.Controls.Add(this.txtPriceTo);
+            this.filterPanel.Controls.Add(this.txtFilterAreaFrom);
+            this.filterPanel.Controls.Add(this.txtFilterPriceTo);
             this.filterPanel.Controls.Add(this.label3);
-            this.filterPanel.Controls.Add(this.txtPriceFrom);
+            this.filterPanel.Controls.Add(this.txtFilterPriceFrom);
             this.filterPanel.Controls.Add(this.label2);
-            this.filterPanel.Controls.Add(this.cmbTransactionType);
+            this.filterPanel.Controls.Add(this.cmbFilterAvailability);
             this.filterPanel.Controls.Add(this.label1);
-            this.filterPanel.Controls.Add(this.cmbPropertyType);
-            this.filterPanel.Controls.Add(this.lblPropertyType);
-            this.filterPanel.Controls.Add(this.txtCitySearch);
+            this.filterPanel.Controls.Add(this.txtFilterLocation);
             this.filterPanel.Controls.Add(this.lblCity);
             this.filterPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.filterPanel.Location = new System.Drawing.Point(0, 70);
@@ -208,7 +190,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label4.Location = new System.Drawing.Point(774, 69);
+            this.label4.Location = new System.Drawing.Point(758, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 15);
             this.label4.TabIndex = 15;
@@ -231,6 +213,7 @@
             this.btnRefresh.Size = new System.Drawing.Size(90, 36);
             this.btnRefresh.TabIndex = 14;
             this.btnRefresh.Text = "تحديث";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnSearch
             // 
@@ -248,31 +231,32 @@
             this.btnSearch.Size = new System.Drawing.Size(90, 36);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "بحث";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtRooms
+            // txtFilterRooms
             // 
-            this.txtRooms.Animated = true;
-            this.txtRooms.BackColor = System.Drawing.Color.Transparent;
-            this.txtRooms.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtRooms.BorderRadius = 8;
-            this.txtRooms.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRooms.DefaultText = "";
-            this.txtRooms.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRooms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRooms.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRooms.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtRooms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRooms.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRooms.ForeColor = System.Drawing.Color.White;
-            this.txtRooms.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRooms.Location = new System.Drawing.Point(308, 87);
-            this.txtRooms.Name = "txtRooms";
-            this.txtRooms.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtRooms.PlaceholderText = "عدد الغرف";
-            this.txtRooms.SelectedText = "";
-            this.txtRooms.Size = new System.Drawing.Size(80, 36);
-            this.txtRooms.TabIndex = 18;
+            this.txtFilterRooms.Animated = true;
+            this.txtFilterRooms.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterRooms.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterRooms.BorderRadius = 8;
+            this.txtFilterRooms.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterRooms.DefaultText = "";
+            this.txtFilterRooms.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterRooms.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterRooms.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterRooms.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterRooms.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterRooms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterRooms.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterRooms.ForeColor = System.Drawing.Color.White;
+            this.txtFilterRooms.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterRooms.Location = new System.Drawing.Point(506, 27);
+            this.txtFilterRooms.Name = "txtFilterRooms";
+            this.txtFilterRooms.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterRooms.PlaceholderText = "عدد الغرف";
+            this.txtFilterRooms.SelectedText = "";
+            this.txtFilterRooms.Size = new System.Drawing.Size(80, 36);
+            this.txtFilterRooms.TabIndex = 18;
             // 
             // label6
             // 
@@ -280,30 +264,35 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(324, 69);
+            this.label6.Location = new System.Drawing.Point(522, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 15);
             this.label6.TabIndex = 17;
             this.label6.Text = "عدد الغرف";
             // 
-            // cmbStatus
+            // cmbFilterStatus
             // 
-            this.cmbStatus.BackColor = System.Drawing.Color.Transparent;
-            this.cmbStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.cmbStatus.BorderRadius = 8;
-            this.cmbStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.cmbStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbStatus.ForeColor = System.Drawing.Color.White;
-            this.cmbStatus.ItemHeight = 30;
-            this.cmbStatus.Location = new System.Drawing.Point(841, 27);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(185, 36);
-            this.cmbStatus.TabIndex = 20;
+            this.cmbFilterStatus.BackColor = System.Drawing.Color.Transparent;
+            this.cmbFilterStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.cmbFilterStatus.BorderRadius = 8;
+            this.cmbFilterStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbFilterStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbFilterStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilterStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.cmbFilterStatus.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbFilterStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbFilterStatus.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbFilterStatus.ForeColor = System.Drawing.Color.White;
+            this.cmbFilterStatus.ItemHeight = 30;
+            this.cmbFilterStatus.Items.AddRange(new object[] {
+            "سيء",
+            "جيد",
+            "جيد جدًا",
+            "ممتاز"});
+            this.cmbFilterStatus.Location = new System.Drawing.Point(841, 27);
+            this.cmbFilterStatus.Name = "cmbFilterStatus";
+            this.cmbFilterStatus.Size = new System.Drawing.Size(185, 36);
+            this.cmbFilterStatus.TabIndex = 20;
             // 
             // label7
             // 
@@ -317,30 +306,30 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "حالة العقار";
             // 
-            // txtAreaTo
+            // txtFilterAreaTo
             // 
-            this.txtAreaTo.Animated = true;
-            this.txtAreaTo.BackColor = System.Drawing.Color.Transparent;
-            this.txtAreaTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtAreaTo.BorderRadius = 8;
-            this.txtAreaTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAreaTo.DefaultText = "";
-            this.txtAreaTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAreaTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAreaTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAreaTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAreaTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtAreaTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAreaTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAreaTo.ForeColor = System.Drawing.Color.White;
-            this.txtAreaTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAreaTo.Location = new System.Drawing.Point(747, 87);
-            this.txtAreaTo.Name = "txtAreaTo";
-            this.txtAreaTo.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtAreaTo.PlaceholderText = "إلى (م²)";
-            this.txtAreaTo.SelectedText = "";
-            this.txtAreaTo.Size = new System.Drawing.Size(80, 36);
-            this.txtAreaTo.TabIndex = 12;
+            this.txtFilterAreaTo.Animated = true;
+            this.txtFilterAreaTo.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterAreaTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterAreaTo.BorderRadius = 8;
+            this.txtFilterAreaTo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterAreaTo.DefaultText = "";
+            this.txtFilterAreaTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterAreaTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterAreaTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterAreaTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterAreaTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterAreaTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterAreaTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterAreaTo.ForeColor = System.Drawing.Color.White;
+            this.txtFilterAreaTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterAreaTo.Location = new System.Drawing.Point(627, 87);
+            this.txtFilterAreaTo.Name = "txtFilterAreaTo";
+            this.txtFilterAreaTo.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterAreaTo.PlaceholderText = "إلى (م²)";
+            this.txtFilterAreaTo.SelectedText = "";
+            this.txtFilterAreaTo.Size = new System.Drawing.Size(80, 36);
+            this.txtFilterAreaTo.TabIndex = 12;
             // 
             // label5
             // 
@@ -348,61 +337,61 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label5.Location = new System.Drawing.Point(729, 93);
+            this.label5.Location = new System.Drawing.Point(713, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(16, 21);
             this.label5.TabIndex = 11;
             this.label5.Text = "-";
             // 
-            // txtAreaFrom
+            // txtFilterAreaFrom
             // 
-            this.txtAreaFrom.Animated = true;
-            this.txtAreaFrom.BackColor = System.Drawing.Color.Transparent;
-            this.txtAreaFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtAreaFrom.BorderRadius = 8;
-            this.txtAreaFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAreaFrom.DefaultText = "";
-            this.txtAreaFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAreaFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAreaFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAreaFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAreaFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtAreaFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAreaFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAreaFrom.ForeColor = System.Drawing.Color.White;
-            this.txtAreaFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAreaFrom.Location = new System.Drawing.Point(643, 87);
-            this.txtAreaFrom.Name = "txtAreaFrom";
-            this.txtAreaFrom.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtAreaFrom.PlaceholderText = "من (م²)";
-            this.txtAreaFrom.SelectedText = "";
-            this.txtAreaFrom.Size = new System.Drawing.Size(80, 36);
-            this.txtAreaFrom.TabIndex = 10;
+            this.txtFilterAreaFrom.Animated = true;
+            this.txtFilterAreaFrom.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterAreaFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterAreaFrom.BorderRadius = 8;
+            this.txtFilterAreaFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterAreaFrom.DefaultText = "";
+            this.txtFilterAreaFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterAreaFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterAreaFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterAreaFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterAreaFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterAreaFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterAreaFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterAreaFrom.ForeColor = System.Drawing.Color.White;
+            this.txtFilterAreaFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterAreaFrom.Location = new System.Drawing.Point(732, 87);
+            this.txtFilterAreaFrom.Name = "txtFilterAreaFrom";
+            this.txtFilterAreaFrom.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterAreaFrom.PlaceholderText = "من (م²)";
+            this.txtFilterAreaFrom.SelectedText = "";
+            this.txtFilterAreaFrom.Size = new System.Drawing.Size(80, 36);
+            this.txtFilterAreaFrom.TabIndex = 10;
             // 
-            // txtPriceTo
+            // txtFilterPriceTo
             // 
-            this.txtPriceTo.Animated = true;
-            this.txtPriceTo.BackColor = System.Drawing.Color.Transparent;
-            this.txtPriceTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtPriceTo.BorderRadius = 8;
-            this.txtPriceTo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPriceTo.DefaultText = "";
-            this.txtPriceTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPriceTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPriceTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPriceTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPriceTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtPriceTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPriceTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPriceTo.ForeColor = System.Drawing.Color.White;
-            this.txtPriceTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPriceTo.Location = new System.Drawing.Point(165, 87);
-            this.txtPriceTo.Name = "txtPriceTo";
-            this.txtPriceTo.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtPriceTo.PlaceholderText = "إلى (سعر)";
-            this.txtPriceTo.SelectedText = "";
-            this.txtPriceTo.Size = new System.Drawing.Size(80, 36);
-            this.txtPriceTo.TabIndex = 10;
+            this.txtFilterPriceTo.Animated = true;
+            this.txtFilterPriceTo.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterPriceTo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterPriceTo.BorderRadius = 8;
+            this.txtFilterPriceTo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterPriceTo.DefaultText = "";
+            this.txtFilterPriceTo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterPriceTo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterPriceTo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterPriceTo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterPriceTo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterPriceTo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterPriceTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterPriceTo.ForeColor = System.Drawing.Color.White;
+            this.txtFilterPriceTo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterPriceTo.Location = new System.Drawing.Point(242, 87);
+            this.txtFilterPriceTo.Name = "txtFilterPriceTo";
+            this.txtFilterPriceTo.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterPriceTo.PlaceholderText = "إلى (سعر)";
+            this.txtFilterPriceTo.SelectedText = "";
+            this.txtFilterPriceTo.Size = new System.Drawing.Size(80, 36);
+            this.txtFilterPriceTo.TabIndex = 10;
             // 
             // label3
             // 
@@ -410,36 +399,36 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label3.Location = new System.Drawing.Point(147, 93);
+            this.label3.Location = new System.Drawing.Point(335, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(16, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "-";
             // 
-            // txtPriceFrom
+            // txtFilterPriceFrom
             // 
-            this.txtPriceFrom.Animated = true;
-            this.txtPriceFrom.BackColor = System.Drawing.Color.Transparent;
-            this.txtPriceFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtPriceFrom.BorderRadius = 8;
-            this.txtPriceFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPriceFrom.DefaultText = "";
-            this.txtPriceFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPriceFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPriceFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPriceFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPriceFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtPriceFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPriceFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPriceFrom.ForeColor = System.Drawing.Color.White;
-            this.txtPriceFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPriceFrom.Location = new System.Drawing.Point(45, 87);
-            this.txtPriceFrom.Name = "txtPriceFrom";
-            this.txtPriceFrom.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtPriceFrom.PlaceholderText = "من (سعر)";
-            this.txtPriceFrom.SelectedText = "";
-            this.txtPriceFrom.Size = new System.Drawing.Size(80, 36);
-            this.txtPriceFrom.TabIndex = 8;
+            this.txtFilterPriceFrom.Animated = true;
+            this.txtFilterPriceFrom.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterPriceFrom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterPriceFrom.BorderRadius = 8;
+            this.txtFilterPriceFrom.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterPriceFrom.DefaultText = "";
+            this.txtFilterPriceFrom.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterPriceFrom.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterPriceFrom.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterPriceFrom.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterPriceFrom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterPriceFrom.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterPriceFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterPriceFrom.ForeColor = System.Drawing.Color.White;
+            this.txtFilterPriceFrom.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterPriceFrom.Location = new System.Drawing.Point(366, 87);
+            this.txtFilterPriceFrom.Name = "txtFilterPriceFrom";
+            this.txtFilterPriceFrom.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterPriceFrom.PlaceholderText = "من (سعر)";
+            this.txtFilterPriceFrom.SelectedText = "";
+            this.txtFilterPriceFrom.Size = new System.Drawing.Size(80, 36);
+            this.txtFilterPriceFrom.TabIndex = 8;
             // 
             // label2
             // 
@@ -447,30 +436,34 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label2.Location = new System.Drawing.Point(42, 69);
+            this.label2.Location = new System.Drawing.Point(371, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "نطاق السعر";
             // 
-            // cmbTransactionType
+            // cmbFilterAvailability
             // 
-            this.cmbTransactionType.BackColor = System.Drawing.Color.Transparent;
-            this.cmbTransactionType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.cmbTransactionType.BorderRadius = 8;
-            this.cmbTransactionType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbTransactionType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbTransactionType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTransactionType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.cmbTransactionType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbTransactionType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbTransactionType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbTransactionType.ForeColor = System.Drawing.Color.White;
-            this.cmbTransactionType.ItemHeight = 30;
-            this.cmbTransactionType.Location = new System.Drawing.Point(643, 27);
-            this.cmbTransactionType.Name = "cmbTransactionType";
-            this.cmbTransactionType.Size = new System.Drawing.Size(185, 36);
-            this.cmbTransactionType.TabIndex = 6;
+            this.cmbFilterAvailability.BackColor = System.Drawing.Color.Transparent;
+            this.cmbFilterAvailability.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.cmbFilterAvailability.BorderRadius = 8;
+            this.cmbFilterAvailability.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbFilterAvailability.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbFilterAvailability.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbFilterAvailability.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.cmbFilterAvailability.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbFilterAvailability.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbFilterAvailability.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbFilterAvailability.ForeColor = System.Drawing.Color.White;
+            this.cmbFilterAvailability.ItemHeight = 30;
+            this.cmbFilterAvailability.Items.AddRange(new object[] {
+            "رهن",
+            "ايجار",
+            "بيع"});
+            this.cmbFilterAvailability.Location = new System.Drawing.Point(627, 27);
+            this.cmbFilterAvailability.Name = "cmbFilterAvailability";
+            this.cmbFilterAvailability.Size = new System.Drawing.Size(185, 36);
+            this.cmbFilterAvailability.TabIndex = 6;
             // 
             // label1
             // 
@@ -478,67 +471,36 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label1.Location = new System.Drawing.Point(755, 9);
+            this.label1.Location = new System.Drawing.Point(739, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "نوع المعاملة";
             // 
-            // cmbPropertyType
+            // txtFilterLocation
             // 
-            this.cmbPropertyType.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPropertyType.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.cmbPropertyType.BorderRadius = 8;
-            this.cmbPropertyType.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbPropertyType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPropertyType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPropertyType.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.cmbPropertyType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPropertyType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPropertyType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbPropertyType.ForeColor = System.Drawing.Color.White;
-            this.cmbPropertyType.ItemHeight = 30;
-            this.cmbPropertyType.Location = new System.Drawing.Point(452, 27);
-            this.cmbPropertyType.Name = "cmbPropertyType";
-            this.cmbPropertyType.Size = new System.Drawing.Size(185, 36);
-            this.cmbPropertyType.TabIndex = 4;
-            // 
-            // lblPropertyType
-            // 
-            this.lblPropertyType.AutoSize = true;
-            this.lblPropertyType.BackColor = System.Drawing.Color.Transparent;
-            this.lblPropertyType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPropertyType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.lblPropertyType.Location = new System.Drawing.Point(577, 9);
-            this.lblPropertyType.Name = "lblPropertyType";
-            this.lblPropertyType.Size = new System.Drawing.Size(55, 15);
-            this.lblPropertyType.TabIndex = 3;
-            this.lblPropertyType.Text = "نوع العقار";
-            // 
-            // txtCitySearch
-            // 
-            this.txtCitySearch.Animated = true;
-            this.txtCitySearch.BackColor = System.Drawing.Color.Transparent;
-            this.txtCitySearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.txtCitySearch.BorderRadius = 8;
-            this.txtCitySearch.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCitySearch.DefaultText = "";
-            this.txtCitySearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCitySearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCitySearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCitySearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCitySearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.txtCitySearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCitySearch.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCitySearch.ForeColor = System.Drawing.Color.White;
-            this.txtCitySearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCitySearch.Location = new System.Drawing.Point(45, 27);
-            this.txtCitySearch.Name = "txtCitySearch";
-            this.txtCitySearch.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.txtCitySearch.PlaceholderText = "البحث بالمدينة أو المنطقة";
-            this.txtCitySearch.SelectedText = "";
-            this.txtCitySearch.Size = new System.Drawing.Size(401, 36);
-            this.txtCitySearch.TabIndex = 2;
+            this.txtFilterLocation.Animated = true;
+            this.txtFilterLocation.BackColor = System.Drawing.Color.Transparent;
+            this.txtFilterLocation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.txtFilterLocation.BorderRadius = 8;
+            this.txtFilterLocation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterLocation.DefaultText = "";
+            this.txtFilterLocation.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterLocation.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterLocation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterLocation.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterLocation.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.txtFilterLocation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterLocation.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterLocation.ForeColor = System.Drawing.Color.White;
+            this.txtFilterLocation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterLocation.Location = new System.Drawing.Point(45, 27);
+            this.txtFilterLocation.Name = "txtFilterLocation";
+            this.txtFilterLocation.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.txtFilterLocation.PlaceholderText = "البحث بالمدينة أو المنطقة";
+            this.txtFilterLocation.SelectedText = "";
+            this.txtFilterLocation.Size = new System.Drawing.Size(401, 36);
+            this.txtFilterLocation.TabIndex = 2;
             // 
             // lblCity
             // 
@@ -559,9 +521,6 @@
             this.dgvProperties.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
             this.dgvProperties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProperties.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProperties.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
@@ -589,15 +548,16 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProperties.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvProperties.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProperties.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvProperties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.dgvProperties.Location = new System.Drawing.Point(0, 226);
+            this.dgvProperties.Location = new System.Drawing.Point(0, 220);
             this.dgvProperties.Name = "dgvProperties";
             this.dgvProperties.ReadOnly = true;
             this.dgvProperties.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvProperties.RowHeadersVisible = false;
             this.dgvProperties.RowTemplate.Height = 35;
-            this.dgvProperties.Size = new System.Drawing.Size(1040, 404);
+            this.dgvProperties.Size = new System.Drawing.Size(1040, 410);
             this.dgvProperties.TabIndex = 2;
             this.dgvProperties.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
             this.dgvProperties.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -683,12 +643,76 @@
             this.colStatus.ReadOnly = true;
             this.colStatus.Width = 65;
             // 
+            // bottomBar
+            // 
+            this.bottomBar.BackColor = System.Drawing.Color.Transparent;
+            this.bottomBar.Controls.Add(this.lblPageInfo);
+            this.bottomBar.Controls.Add(this.btnNextPage);
+            this.bottomBar.Controls.Add(this.btnPrevPage);
+            this.bottomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            this.bottomBar.Location = new System.Drawing.Point(0, 570);
+            this.bottomBar.Name = "bottomBar";
+            this.bottomBar.Padding = new System.Windows.Forms.Padding(15, 8, 15, 8);
+            this.bottomBar.Size = new System.Drawing.Size(1040, 60);
+            this.bottomBar.TabIndex = 3;
+            // 
+            // lblPageInfo
+            // 
+            this.lblPageInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPageInfo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.lblPageInfo.ForeColor = System.Drawing.Color.White;
+            this.lblPageInfo.Location = new System.Drawing.Point(420, 17);
+            this.lblPageInfo.Name = "lblPageInfo";
+            this.lblPageInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblPageInfo.Size = new System.Drawing.Size(200, 25);
+            this.lblPageInfo.TabIndex = 2;
+            this.lblPageInfo.Text = "صفحة 1 من 1";
+            this.lblPageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnNextPage
+            // 
+            this.btnNextPage.Animated = true;
+            this.btnNextPage.BorderRadius = 8;
+            this.btnNextPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnNextPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNextPage.ForeColor = System.Drawing.Color.White;
+            this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnNextPage.Location = new System.Drawing.Point(15, 13);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(65, 36);
+            this.btnNextPage.TabIndex = 1;
+            this.btnNextPage.Text = "←";
+            this.btnNextPage.Click += new System.EventHandler(this.btnNextPage_Click);
+            // 
+            // btnPrevPage
+            // 
+            this.btnPrevPage.Animated = true;
+            this.btnPrevPage.BorderRadius = 8;
+            this.btnPrevPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrevPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
+            this.btnPrevPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.btnPrevPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrevPage.ForeColor = System.Drawing.Color.White;
+            this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnPrevPage.Location = new System.Drawing.Point(86, 13);
+            this.btnPrevPage.Name = "btnPrevPage";
+            this.btnPrevPage.Size = new System.Drawing.Size(59, 36);
+            this.btnPrevPage.TabIndex = 0;
+            this.btnPrevPage.Text = " →";
+            this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
+            // 
             // frmPropertiesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(1040, 630);
+            this.Controls.Add(this.bottomBar);
             this.Controls.Add(this.dgvProperties);
             this.Controls.Add(this.filterPanel);
             this.Controls.Add(this.guna2Panel1);
@@ -696,41 +720,41 @@
             this.Name = "frmPropertiesList";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "Properties List";
+            this.Load += new System.EventHandler(this.FrmPropertiesList_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.filterPanel.ResumeLayout(false);
             this.filterPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProperties)).EndInit();
+            this.bottomBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
+
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label lblTitle;
         private Guna.UI2.WinForms.Guna2Panel filterPanel;
-        private Guna.UI2.WinForms.Guna2TextBox txtCitySearch; // Changed from cmbCity
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterLocation; // Changed from cmbCity
         private System.Windows.Forms.Label lblCity;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbPropertyType;
-        private System.Windows.Forms.Label lblPropertyType;
-        private Guna.UI2.WinForms.Guna2TextBox txtPriceFrom;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterPriceFrom;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbTransactionType;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbFilterAvailability;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtRooms;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterRooms;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbStatus;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbFilterStatus;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox txtAreaTo;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterAreaTo;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox txtAreaFrom;
-        private Guna.UI2.WinForms.Guna2TextBox txtPriceTo;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterAreaFrom;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterPriceTo;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Button btnRefresh;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProperties;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnAddNewProperty;
         private Guna.UI2.WinForms.Guna2Button btnViewDetails;
@@ -742,5 +766,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStatus;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Panel bottomBar;
+        private System.Windows.Forms.Label lblPageInfo;
+        private Guna.UI2.WinForms.Guna2Button btnNextPage;
+        private Guna.UI2.WinForms.Guna2Button btnPrevPage;
     }
 }

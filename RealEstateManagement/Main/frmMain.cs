@@ -64,7 +64,16 @@ namespace RealEstateManagement
             lblFormTitle.Text = "لوحة التحكم";
             UpdateStatusBar("عرض لوحة التحكم");
 
-            // TODO: Load dashboard content
+            // Clear existing content
+            mainMdiPanel.Controls.Clear();
+
+            // Use GetRequiredService to throw an exception if resolution fails
+            var frm = Program.ServiceProvider.GetRequiredService<frmDashboard>();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            mainMdiPanel.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnPropertiesList_Click(object sender, EventArgs e)
@@ -72,20 +81,17 @@ namespace RealEstateManagement
             SetActiveButton(btnPropertiesList);
             lblFormTitle.Text = "إدارة العقارات";
             UpdateStatusBar("عرض قائمة العقارات");
-            // TODO: Load properties list
             // Clear existing content
             mainMdiPanel.Controls.Clear();
 
-            // Create and add settings form
-            frmPropertiesList settingsForm = new  frmPropertiesList(this)
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill
-            };
-
-            mainMdiPanel.Controls.Add(settingsForm);
-            settingsForm.Show();
+            // Use GetRequiredService to throw an exception if resolution fails
+            var frm = Program.ServiceProvider.GetRequiredService<frmPropertiesList>();
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            frm.SetMainForm(this);
+            mainMdiPanel.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnOwnersList_Click(object sender, EventArgs e)

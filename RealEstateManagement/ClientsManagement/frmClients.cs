@@ -172,8 +172,6 @@ namespace RealEstateManagement
                 Limit = PAGE_SIZE,
                 FullName=txtFilterName.Text,
                 PhoneNumber=txtFilterPhone.Text
-
-
             };
         }
 

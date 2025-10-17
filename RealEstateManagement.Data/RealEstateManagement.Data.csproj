@@ -109,6 +109,16 @@
     <Compile Include="DTOs\Clients\Queries\ClientsGetResponseDto.cs" />
     <Compile Include="DTOs\Clients\Update\ClientUpdateRequestDto.cs" />
     <Compile Include="DTOs\Clients\Update\ClientUpdateResponseDto.cs" />
+    <Compile Include="DTOs\Properties\Queries\PropertiesGetRequestDto.cs" />
+    <Compile Include="DTOs\Properties\Queries\PropertiesGetResponseDto.cs" />
+    <Compile Include="DTOs\Properties\Create\PropertyCreateRequestDto.cs" />
+    <Compile Include="DTOs\Properties\Create\PropertyCreateResponseDto.cs" />
+    <Compile Include="DTOs\Properties\Delete\PropertyDeleteRequestDto.cs" />
+    <Compile Include="DTOs\Properties\Delete\PropertyDeleteResponseDto.cs" />
+    <Compile Include="DTOs\Properties\Queries\PropertyGetRequestDto.cs" />
+    <Compile Include="DTOs\Properties\Queries\PropertyGetResponseDto.cs" />
+    <Compile Include="DTOs\Properties\Update\PropertyUpdateRequestDto.cs" />
+    <Compile Include="DTOs\Properties\Update\PropertyUpdateResponseDto.cs" />
     <Compile Include="Helpers\SqlDataExtensions.cs" />
     <Compile Include="Interfaces\IClientsRepository.cs" />
     <Compile Include="Interfaces\IOwnersRepository.cs" />
@@ -135,14 +145,17 @@
     <Compile Include="Repositories\Owners\Queries\GetOwnerPropertiesQuery.cs" />
     <Compile Include="Repositories\Owners\Queries\GetOwnerQuery.cs" />
     <Compile Include="Repositories\Owners\Queries\GetOwnersQuery.cs" />
+    <Compile Include="Repositories\Properties\Commands\AddPropertyCommand.cs" />
+    <Compile Include="Repositories\Properties\Commands\DeletePropertyCommand.cs" />
+    <Compile Include="Repositories\Properties\Commands\UpdatePropertyCommand.cs" />
+    <Compile Include="Repositories\Properties\Helpers\PropertyMapper.cs" />
     <Compile Include="Repositories\Properties\PropertiesRepository.cs" />
+    <Compile Include="Repositories\Properties\Queries\GetPropertiesQuery.cs" />
+    <Compile Include="Repositories\Properties\Queries\GetPropertyQuery.cs" />
     <Compile Include="Results\OperationResult.cs" />
     <Compile Include="Settings\DbSettings.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Properties\Commands\" />
-    <Folder Include="Repositories\Properties\Queries\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

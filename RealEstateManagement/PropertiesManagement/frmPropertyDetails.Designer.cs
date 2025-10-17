@@ -2,15 +2,8 @@
 {
     partial class frmPropertyDetails
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.pnlTopBar = new Guna.UI2.WinForms.Guna2Panel();
@@ -102,67 +91,70 @@
             // 
             // btnEditProperty
             // 
-            this.btnEditProperty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditProperty.Animated = true;
             this.btnEditProperty.BorderRadius = 8;
             this.btnEditProperty.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEditProperty.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEditProperty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEditProperty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditProperty.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnEditProperty.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProperty.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.btnEditProperty.ForeColor = System.Drawing.Color.White;
             this.btnEditProperty.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnEditProperty.Location = new System.Drawing.Point(822, 17);
+            this.btnEditProperty.Location = new System.Drawing.Point(108, 17);
             this.btnEditProperty.Name = "btnEditProperty";
-            this.btnEditProperty.Size = new System.Drawing.Size(110, 35);
+            this.btnEditProperty.Size = new System.Drawing.Size(120, 35);
             this.btnEditProperty.TabIndex = 6;
-            this.btnEditProperty.Text = "Edit Property";
+            this.btnEditProperty.Text = "تعديل العقار";
+            this.btnEditProperty.Click += new System.EventHandler(this.btnEditProperty_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.Animated = true;
             this.btnClose.BorderRadius = 8;
             this.btnClose.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnClose.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnClose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnClose.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnClose.Location = new System.Drawing.Point(938, 17);
+            this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(33)))), ((int)(((byte)(49)))));
+            this.btnClose.Location = new System.Drawing.Point(12, 17);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(90, 35);
             this.btnClose.TabIndex = 5;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "إغلاق";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblPropertyID
             // 
-            this.lblPropertyID.AutoSize = true;
-            this.lblPropertyID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPropertyID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPropertyID.Font = new System.Drawing.Font("Cairo", 10F);
             this.lblPropertyID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.lblPropertyID.Location = new System.Drawing.Point(13, 41);
+            this.lblPropertyID.Location = new System.Drawing.Point(802, 17);
             this.lblPropertyID.Name = "lblPropertyID";
-            this.lblPropertyID.Size = new System.Drawing.Size(59, 21);
+            this.lblPropertyID.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblPropertyID.Size = new System.Drawing.Size(228, 21);
             this.lblPropertyID.TabIndex = 1;
-            this.lblPropertyID.Text = "ID: 101";
+            this.lblPropertyID.Text = "رقم العقار: 101";
+            this.lblPropertyID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitle.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(10, 4);
+            this.lblTitle.Location = new System.Drawing.Point(400, 4);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(517, 37);
+            this.lblTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblTitle.Size = new System.Drawing.Size(628, 37);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Luxury Villa on Palm Jumeirah (ID: 101)";
+            this.lblTitle.Text = "فيلا فاخرة - نخلة جميرا";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlImageGalleryWrapper
             // 
-            this.pnlImageGalleryWrapper.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlImageGalleryWrapper.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlImageGalleryWrapper.BorderRadius = 15;
             this.pnlImageGalleryWrapper.Controls.Add(this.pnlImageGallery);
@@ -176,60 +168,64 @@
             // 
             // pnlImageGallery
             // 
-            this.pnlImageGallery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlImageGallery.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlImageGallery.AutoScroll = true;
             this.pnlImageGallery.BackColor = System.Drawing.Color.Transparent;
             this.pnlImageGallery.Location = new System.Drawing.Point(18, 50);
             this.pnlImageGallery.Name = "pnlImageGallery";
             this.pnlImageGallery.Padding = new System.Windows.Forms.Padding(5);
+            this.pnlImageGallery.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.pnlImageGallery.Size = new System.Drawing.Size(648, 120);
             this.pnlImageGallery.TabIndex = 1;
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.label13.Location = new System.Drawing.Point(15, 15);
+            this.label13.Location = new System.Drawing.Point(550, 15);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(147, 25);
+            this.label13.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label13.Size = new System.Drawing.Size(116, 25);
             this.label13.TabIndex = 0;
-            this.label13.Text = "Property Photos";
+            this.label13.Text = "صور العقار";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2TabControl1
             // 
-            this.guna2TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Right;
+            this.guna2TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2TabControl1.Controls.Add(this.tabPageDetails);
             this.guna2TabControl1.Controls.Add(this.tabPageFinancials);
             this.guna2TabControl1.Controls.Add(this.tabPageDescription);
-            this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 45);
             this.guna2TabControl1.Location = new System.Drawing.Point(15, 277);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
             this.guna2TabControl1.Size = new System.Drawing.Size(684, 341);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Cairo", 10F);
             this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(164)))), ((int)(((byte)(166)))));
             this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
-            this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
+            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 45);
             this.guna2TabControl1.TabIndex = 4;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.VerticalRight;
             // 
             // tabPageDetails
             // 
@@ -248,166 +244,195 @@
             this.tabPageDetails.Controls.Add(this.label2);
             this.tabPageDetails.Controls.Add(this.lblValueType);
             this.tabPageDetails.Controls.Add(this.label1);
-            this.tabPageDetails.Location = new System.Drawing.Point(4, 44);
+            this.tabPageDetails.Location = new System.Drawing.Point(4, 4);
             this.tabPageDetails.Name = "tabPageDetails";
             this.tabPageDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDetails.Size = new System.Drawing.Size(676, 293);
+            this.tabPageDetails.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPageDetails.Size = new System.Drawing.Size(496, 333);
             this.tabPageDetails.TabIndex = 0;
-            this.tabPageDetails.Text = "Details";
+            this.tabPageDetails.Text = "التفاصيل";
             // 
             // lblValueDate
             // 
-            this.lblValueDate.AutoSize = true;
-            this.lblValueDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueDate.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueDate.ForeColor = System.Drawing.Color.White;
-            this.lblValueDate.Location = new System.Drawing.Point(340, 240);
+            this.lblValueDate.Location = new System.Drawing.Point(20, 240);
             this.lblValueDate.Name = "lblValueDate";
-            this.lblValueDate.Size = new System.Drawing.Size(95, 21);
+            this.lblValueDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueDate.Size = new System.Drawing.Size(150, 30);
             this.lblValueDate.TabIndex = 13;
-            this.lblValueDate.Text = "2024-10-01";
+            this.lblValueDate.Text = "01/10/2024";
+            this.lblValueDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.Font = new System.Drawing.Font("Cairo", 9F);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label12.Location = new System.Drawing.Point(340, 215);
+            this.label12.Location = new System.Drawing.Point(20, 215);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(91, 19);
+            this.label12.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label12.Size = new System.Drawing.Size(150, 25);
             this.label12.TabIndex = 12;
-            this.label12.Text = "Listing Date:";
+            this.label12.Text = "تاريخ الإضافة:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueBathrooms
             // 
-            this.lblValueBathrooms.AutoSize = true;
-            this.lblValueBathrooms.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueBathrooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueBathrooms.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueBathrooms.ForeColor = System.Drawing.Color.White;
             this.lblValueBathrooms.Location = new System.Drawing.Point(180, 240);
             this.lblValueBathrooms.Name = "lblValueBathrooms";
-            this.lblValueBathrooms.Size = new System.Drawing.Size(19, 21);
+            this.lblValueBathrooms.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueBathrooms.Size = new System.Drawing.Size(120, 30);
             this.lblValueBathrooms.TabIndex = 11;
             this.lblValueBathrooms.Text = "7";
+            this.lblValueBathrooms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.Font = new System.Drawing.Font("Cairo", 9F);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label10.Location = new System.Drawing.Point(180, 215);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 19);
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(120, 25);
             this.label10.TabIndex = 10;
-            this.label10.Text = "Bathrooms:";
+            this.label10.Text = "عدد الحمامات:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueRooms
             // 
-            this.lblValueRooms.AutoSize = true;
-            this.lblValueRooms.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueRooms.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueRooms.ForeColor = System.Drawing.Color.White;
-            this.lblValueRooms.Location = new System.Drawing.Point(20, 240);
+            this.lblValueRooms.Location = new System.Drawing.Point(320, 240);
             this.lblValueRooms.Name = "lblValueRooms";
-            this.lblValueRooms.Size = new System.Drawing.Size(19, 21);
+            this.lblValueRooms.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueRooms.Size = new System.Drawing.Size(150, 30);
             this.lblValueRooms.TabIndex = 9;
             this.lblValueRooms.Text = "6";
+            this.lblValueRooms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Cairo", 9F);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label8.Location = new System.Drawing.Point(20, 215);
+            this.label8.Location = new System.Drawing.Point(320, 215);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 19);
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(150, 25);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Rooms:";
+            this.label8.Text = "عدد الغرف:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueArea
             // 
-            this.lblValueArea.AutoSize = true;
-            this.lblValueArea.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueArea.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueArea.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueArea.ForeColor = System.Drawing.Color.White;
-            this.lblValueArea.Location = new System.Drawing.Point(20, 160);
+            this.lblValueArea.Location = new System.Drawing.Point(320, 160);
             this.lblValueArea.Name = "lblValueArea";
-            this.lblValueArea.Size = new System.Drawing.Size(107, 21);
+            this.lblValueArea.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueArea.Size = new System.Drawing.Size(150, 30);
             this.lblValueArea.TabIndex = 7;
-            this.lblValueArea.Text = "750.0 sq.m";
+            this.lblValueArea.Text = "750.0 م²";
+            this.lblValueArea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.Font = new System.Drawing.Font("Cairo", 9F);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(20, 135);
+            this.label6.Location = new System.Drawing.Point(320, 135);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 19);
+            this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label6.Size = new System.Drawing.Size(150, 25);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Area:";
+            this.label6.Text = "المساحة:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueCity
             // 
-            this.lblValueCity.AutoSize = true;
-            this.lblValueCity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueCity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueCity.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueCity.ForeColor = System.Drawing.Color.White;
-            this.lblValueCity.Location = new System.Drawing.Point(340, 80);
+            this.lblValueCity.Location = new System.Drawing.Point(20, 80);
             this.lblValueCity.Name = "lblValueCity";
-            this.lblValueCity.Size = new System.Drawing.Size(58, 21);
+            this.lblValueCity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueCity.Size = new System.Drawing.Size(150, 30);
             this.lblValueCity.TabIndex = 5;
-            this.lblValueCity.Text = "Dubai";
+            this.lblValueCity.Text = "دبي";
+            this.lblValueCity.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Cairo", 9F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label4.Location = new System.Drawing.Point(340, 55);
+            this.label4.Location = new System.Drawing.Point(20, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 19);
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label4.Size = new System.Drawing.Size(150, 25);
             this.label4.TabIndex = 4;
-            this.label4.Text = "City:";
+            this.label4.Text = "الموقع:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueTransaction
             // 
-            this.lblValueTransaction.AutoSize = true;
-            this.lblValueTransaction.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueTransaction.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueTransaction.ForeColor = System.Drawing.Color.White;
             this.lblValueTransaction.Location = new System.Drawing.Point(180, 80);
             this.lblValueTransaction.Name = "lblValueTransaction";
-            this.lblValueTransaction.Size = new System.Drawing.Size(43, 21);
+            this.lblValueTransaction.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueTransaction.Size = new System.Drawing.Size(120, 30);
             this.lblValueTransaction.TabIndex = 3;
-            this.lblValueTransaction.Text = "Sale";
+            this.lblValueTransaction.Text = "للبيع";
+            this.lblValueTransaction.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Font = new System.Drawing.Font("Cairo", 9F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.label2.Location = new System.Drawing.Point(180, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 19);
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(120, 25);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Transaction Type:";
+            this.label2.Text = "نوع المعاملة:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblValueType
             // 
-            this.lblValueType.AutoSize = true;
-            this.lblValueType.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValueType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueType.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblValueType.ForeColor = System.Drawing.Color.White;
-            this.lblValueType.Location = new System.Drawing.Point(20, 80);
+            this.lblValueType.Location = new System.Drawing.Point(320, 80);
             this.lblValueType.Name = "lblValueType";
-            this.lblValueType.Size = new System.Drawing.Size(47, 21);
+            this.lblValueType.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueType.Size = new System.Drawing.Size(150, 30);
             this.lblValueType.TabIndex = 1;
-            this.lblValueType.Text = "Villa";
+            this.lblValueType.Text = "فيلا";
+            this.lblValueType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Cairo", 9F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label1.Location = new System.Drawing.Point(20, 55);
+            this.label1.Location = new System.Drawing.Point(320, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(150, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Property Type:";
+            this.label1.Text = "نوع العقار:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tabPageFinancials
             // 
@@ -418,78 +443,91 @@
             this.tabPageFinancials.Controls.Add(this.label17);
             this.tabPageFinancials.Controls.Add(this.lblValuePrice);
             this.tabPageFinancials.Controls.Add(this.label15);
-            this.tabPageFinancials.Location = new System.Drawing.Point(4, 44);
+            this.tabPageFinancials.Location = new System.Drawing.Point(4, 4);
             this.tabPageFinancials.Name = "tabPageFinancials";
             this.tabPageFinancials.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFinancials.Size = new System.Drawing.Size(676, 293);
+            this.tabPageFinancials.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPageFinancials.Size = new System.Drawing.Size(496, 333);
             this.tabPageFinancials.TabIndex = 1;
-            this.tabPageFinancials.Text = "Financials";
+            this.tabPageFinancials.Text = "المعلومات المالية";
             // 
             // lblValueDLDFee
             // 
-            this.lblValueDLDFee.AutoSize = true;
-            this.lblValueDLDFee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValueDLDFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblValueDLDFee.Location = new System.Drawing.Point(20, 240);
+            this.lblValueDLDFee.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueDLDFee.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
+            this.lblValueDLDFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.lblValueDLDFee.Location = new System.Drawing.Point(290, 240);
             this.lblValueDLDFee.Name = "lblValueDLDFee";
-            this.lblValueDLDFee.Size = new System.Drawing.Size(120, 21);
+            this.lblValueDLDFee.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueDLDFee.Size = new System.Drawing.Size(180, 30);
             this.lblValueDLDFee.TabIndex = 5;
-            this.lblValueDLDFee.Text = "AED 600,000";
+            this.lblValueDLDFee.Text = "-";
+            this.lblValueDLDFee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.Font = new System.Drawing.Font("Cairo", 9F);
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label19.Location = new System.Drawing.Point(20, 215);
+            this.label19.Location = new System.Drawing.Point(290, 215);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 19);
+            this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label19.Size = new System.Drawing.Size(180, 25);
             this.label19.TabIndex = 4;
-            this.label19.Text = "DLD Fees:";
+            this.label19.Text = "رسوم التسجيل:";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblValueCommission
             // 
-            this.lblValueCommission.AutoSize = true;
-            this.lblValueCommission.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValueCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblValueCommission.Location = new System.Drawing.Point(20, 160);
+            this.lblValueCommission.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValueCommission.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
+            this.lblValueCommission.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblValueCommission.Location = new System.Drawing.Point(290, 160);
             this.lblValueCommission.Name = "lblValueCommission";
-            this.lblValueCommission.Size = new System.Drawing.Size(120, 21);
+            this.lblValueCommission.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValueCommission.Size = new System.Drawing.Size(180, 30);
             this.lblValueCommission.TabIndex = 3;
-            this.lblValueCommission.Text = "AED 750,000";
+            this.lblValueCommission.Text = "750,000 ج.م";
+            this.lblValueCommission.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Font = new System.Drawing.Font("Cairo", 9F);
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label17.Location = new System.Drawing.Point(20, 135);
+            this.label17.Location = new System.Drawing.Point(290, 135);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(91, 19);
+            this.label17.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label17.Size = new System.Drawing.Size(180, 25);
             this.label17.TabIndex = 2;
-            this.label17.Text = "Commission:";
+            this.label17.Text = "العمولة:";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblValuePrice
             // 
-            this.lblValuePrice.AutoSize = true;
-            this.lblValuePrice.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValuePrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValuePrice.Font = new System.Drawing.Font("Cairo", 16F, System.Drawing.FontStyle.Bold);
             this.lblValuePrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblValuePrice.Location = new System.Drawing.Point(17, 72);
+            this.lblValuePrice.Location = new System.Drawing.Point(200, 72);
             this.lblValuePrice.Name = "lblValuePrice";
-            this.lblValuePrice.Size = new System.Drawing.Size(217, 32);
+            this.lblValuePrice.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblValuePrice.Size = new System.Drawing.Size(270, 40);
             this.lblValuePrice.TabIndex = 1;
-            this.lblValuePrice.Text = "AED 15,000,000";
+            this.lblValuePrice.Text = "15,000,000 ج.م";
+            this.lblValuePrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.Font = new System.Drawing.Font("Cairo", 9F);
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label15.Location = new System.Drawing.Point(20, 47);
+            this.label15.Location = new System.Drawing.Point(370, 47);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 19);
+            this.label15.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label15.Size = new System.Drawing.Size(100, 25);
             this.label15.TabIndex = 0;
-            this.label15.Text = "Price:";
+            this.label15.Text = "السعر:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tabPageDescription
             // 
@@ -498,37 +536,41 @@
             this.tabPageDescription.Controls.Add(this.label21);
             this.tabPageDescription.Controls.Add(this.txtDescription);
             this.tabPageDescription.Controls.Add(this.label20);
-            this.tabPageDescription.Location = new System.Drawing.Point(4, 44);
+            this.tabPageDescription.Location = new System.Drawing.Point(4, 4);
             this.tabPageDescription.Name = "tabPageDescription";
             this.tabPageDescription.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDescription.Size = new System.Drawing.Size(676, 293);
+            this.tabPageDescription.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.tabPageDescription.Size = new System.Drawing.Size(496, 333);
             this.tabPageDescription.TabIndex = 2;
-            this.tabPageDescription.Text = "Description & Amenities";
+            this.tabPageDescription.Text = "الوصف والمميزات";
             // 
             // pnlAmenities
             // 
-            this.pnlAmenities.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlAmenities.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlAmenities.BackColor = System.Drawing.Color.Transparent;
             this.pnlAmenities.Location = new System.Drawing.Point(18, 226);
             this.pnlAmenities.Name = "pnlAmenities";
-            this.pnlAmenities.Size = new System.Drawing.Size(640, 61);
+            this.pnlAmenities.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.pnlAmenities.Size = new System.Drawing.Size(460, 90);
             this.pnlAmenities.TabIndex = 3;
             // 
             // label21
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(17, 204);
+            this.label21.Location = new System.Drawing.Point(388, 204);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(78, 19);
+            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label21.Size = new System.Drawing.Size(90, 19);
             this.label21.TabIndex = 2;
-            this.label21.Text = "Amenities:";
+            this.label21.Text = "المميزات:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtDescription
             // 
-            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDescription.Animated = true;
             this.txtDescription.BackColor = System.Drawing.Color.Transparent;
@@ -542,34 +584,37 @@
             this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtDescription.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDescription.Font = new System.Drawing.Font("Cairo", 9F);
             this.txtDescription.ForeColor = System.Drawing.Color.White;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.Location = new System.Drawing.Point(18, 47);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.ReadOnly = true;
+            this.txtDescription.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDescription.SelectedText = "";
-            this.txtDescription.Size = new System.Drawing.Size(640, 150);
+            this.txtDescription.Size = new System.Drawing.Size(460, 150);
             this.txtDescription.TabIndex = 1;
             // 
             // label20
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Font = new System.Drawing.Font("Cairo", 9F, System.Drawing.FontStyle.Bold);
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(17, 25);
+            this.label20.Location = new System.Drawing.Point(405, 25);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(90, 19);
+            this.label20.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label20.Size = new System.Drawing.Size(73, 19);
             this.label20.TabIndex = 0;
-            this.label20.Text = "Description:";
+            this.label20.Text = "الوصف:";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlRightInfo
             // 
-            this.pnlRightInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnlRightInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRightInfo.AutoScroll = true;
             this.pnlRightInfo.Controls.Add(this.guna2Panel3);
@@ -593,80 +638,92 @@
             this.guna2Panel3.Location = new System.Drawing.Point(5, 175);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Padding = new System.Windows.Forms.Padding(15);
-            this.guna2Panel3.Size = new System.Drawing.Size(310, 180);
+            this.guna2Panel3.Size = new System.Drawing.Size(310, 200);
             this.guna2Panel3.TabIndex = 1;
             // 
             // lblAgentEmail
             // 
-            this.lblAgentEmail.AutoSize = true;
+            this.lblAgentEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAgentEmail.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgentEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentEmail.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.lblAgentEmail.ForeColor = System.Drawing.Color.White;
-            this.lblAgentEmail.Location = new System.Drawing.Point(16, 150);
+            this.lblAgentEmail.Location = new System.Drawing.Point(16, 160);
             this.lblAgentEmail.Name = "lblAgentEmail";
-            this.lblAgentEmail.Size = new System.Drawing.Size(130, 21);
+            this.lblAgentEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblAgentEmail.Size = new System.Drawing.Size(278, 25);
             this.lblAgentEmail.TabIndex = 5;
-            this.lblAgentEmail.Text = "agent@mail.com";
+            this.lblAgentEmail.Text = "العنوان";
+            this.lblAgentEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label24
             // 
-            this.label24.AutoSize = true;
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Cairo", 9F);
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label24.Location = new System.Drawing.Point(16, 125);
+            this.label24.Location = new System.Drawing.Point(220, 135);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(44, 19);
+            this.label24.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label24.Size = new System.Drawing.Size(74, 25);
             this.label24.TabIndex = 4;
-            this.label24.Text = "Email:";
+            this.label24.Text = "العنوان:";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblAgentPhone
             // 
-            this.lblAgentPhone.AutoSize = true;
+            this.lblAgentPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAgentPhone.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgentPhone.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentPhone.Font = new System.Drawing.Font("Cairo", 10F, System.Drawing.FontStyle.Bold);
             this.lblAgentPhone.ForeColor = System.Drawing.Color.White;
-            this.lblAgentPhone.Location = new System.Drawing.Point(16, 95);
+            this.lblAgentPhone.Location = new System.Drawing.Point(16, 105);
             this.lblAgentPhone.Name = "lblAgentPhone";
-            this.lblAgentPhone.Size = new System.Drawing.Size(127, 21);
+            this.lblAgentPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblAgentPhone.Size = new System.Drawing.Size(278, 25);
             this.lblAgentPhone.TabIndex = 3;
             this.lblAgentPhone.Text = "+971 50 123456";
+            this.lblAgentPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label23
             // 
-            this.label23.AutoSize = true;
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Cairo", 9F);
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.label23.Location = new System.Drawing.Point(16, 70);
+            this.label23.Location = new System.Drawing.Point(228, 80);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 19);
+            this.label23.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label23.Size = new System.Drawing.Size(66, 25);
             this.label23.TabIndex = 2;
-            this.label23.Text = "Phone:";
+            this.label23.Text = "الهاتف:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblAgentName
             // 
-            this.lblAgentName.AutoSize = true;
+            this.lblAgentName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAgentName.BackColor = System.Drawing.Color.Transparent;
-            this.lblAgentName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgentName.Font = new System.Drawing.Font("Cairo", 12F, System.Drawing.FontStyle.Bold);
             this.lblAgentName.ForeColor = System.Drawing.Color.White;
-            this.lblAgentName.Location = new System.Drawing.Point(15, 30);
+            this.lblAgentName.Location = new System.Drawing.Point(80, 45);
             this.lblAgentName.Name = "lblAgentName";
-            this.lblAgentName.Size = new System.Drawing.Size(147, 25);
+            this.lblAgentName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblAgentName.Size = new System.Drawing.Size(214, 30);
             this.lblAgentName.TabIndex = 1;
-            this.lblAgentName.Text = "Alex Rodriguez";
+            this.lblAgentName.Text = "اسم المالك";
+            this.lblAgentName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label22
             // 
-            this.label22.AutoSize = true;
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.label22.Location = new System.Drawing.Point(15, 5);
+            this.label22.Location = new System.Drawing.Point(170, 15);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(126, 25);
+            this.label22.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label22.Size = new System.Drawing.Size(124, 25);
             this.label22.TabIndex = 0;
-            this.label22.Text = "Agent Contact";
+            this.label22.Text = "بيانات المالك";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // guna2Panel1
             // 
@@ -682,6 +739,7 @@
             // 
             // lblStatus
             // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStatus.Animated = true;
             this.lblStatus.BorderRadius = 10;
             this.lblStatus.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -689,25 +747,27 @@
             this.lblStatus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.lblStatus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.lblStatus.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lblStatus.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(21, 93);
+            this.lblStatus.Location = new System.Drawing.Point(65, 80);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(180, 45);
+            this.lblStatus.Size = new System.Drawing.Size(180, 50);
             this.lblStatus.TabIndex = 1;
-            this.lblStatus.Text = "Available";
+            this.lblStatus.Text = "متاح";
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Cairo", 11F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.label14.Location = new System.Drawing.Point(15, 15);
+            this.label14.Location = new System.Drawing.Point(170, 15);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(155, 25);
+            this.label14.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label14.Size = new System.Drawing.Size(124, 25);
             this.label14.TabIndex = 0;
-            this.label14.Text = "Availability Status";
+            this.label14.Text = "حالة العقار";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmPropertyDetails
             // 
@@ -721,24 +781,20 @@
             this.Controls.Add(this.pnlTopBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPropertyDetails";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmPropertyDetails";
+            this.Text = "تفاصيل العقار";
+            this.Load += new System.EventHandler(this.frmPropertyDetails_Load);
             this.pnlTopBar.ResumeLayout(false);
-            this.pnlTopBar.PerformLayout();
             this.pnlImageGalleryWrapper.ResumeLayout(false);
-            this.pnlImageGalleryWrapper.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPageDetails.ResumeLayout(false);
-            this.tabPageDetails.PerformLayout();
             this.tabPageFinancials.ResumeLayout(false);
-            this.tabPageFinancials.PerformLayout();
             this.tabPageDescription.ResumeLayout(false);
-            this.tabPageDescription.PerformLayout();
             this.pnlRightInfo.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
-            this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

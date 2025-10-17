@@ -146,3 +146,9 @@ F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.cs
 F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.csproj.CopyComplete
 F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.exe
 F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.pdb
+F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.frmPropertyDetails.resources
+F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.frmAddEditProperty.resources
+F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.frmSearchOwner.resources
+F:\real-estate-management\RealEstateManagement\bin\Debug\Guna.Charts.WinForms.dll
+F:\real-estate-management\RealEstateManagement\bin\Debug\Guna.Charts.WinForms.xml
+F:\real-estate-management\RealEstateManagement\obj\Debug\RealEstateManagement.frmDashboard.resources

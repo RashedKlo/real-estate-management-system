@@ -19,7 +19,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.contentArea = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvOwners = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -60,6 +65,7 @@
             // 
             this.mainContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(18)))), ((int)(((byte)(26)))));
             this.mainContainer.Controls.Add(this.contentArea);
+            this.mainContainer.Controls.Add(this.sideFilterPanel);
             this.mainContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainContainer.Location = new System.Drawing.Point(0, 0);
             this.mainContainer.Name = "mainContainer";
@@ -73,11 +79,11 @@
             this.contentArea.Controls.Add(this.dgvOwners);
             this.contentArea.Controls.Add(this.bottomBar);
             this.contentArea.Controls.Add(this.topBar);
-            this.contentArea.Controls.Add(this.sideFilterPanel);
             this.contentArea.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentArea.Location = new System.Drawing.Point(10, 10);
             this.contentArea.Name = "contentArea";
-            this.contentArea.Size = new System.Drawing.Size(1020, 610);
+            this.contentArea.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.contentArea.Size = new System.Drawing.Size(760, 610);
             this.contentArea.TabIndex = 1;
             // 
             // dgvOwners
@@ -106,24 +112,24 @@
             this.colPhoneNumber,
             this.colAddress,
             this.colCreatedAt});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cairo", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(106)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOwners.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cairo", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(106)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOwners.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvOwners.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvOwners.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(65)))));
-            this.dgvOwners.Location = new System.Drawing.Point(0, 70);
+            this.dgvOwners.Location = new System.Drawing.Point(0, 60);
             this.dgvOwners.MultiSelect = false;
             this.dgvOwners.Name = "dgvOwners";
             this.dgvOwners.ReadOnly = true;
             this.dgvOwners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgvOwners.RowHeadersVisible = false;
             this.dgvOwners.RowTemplate.Height = 42;
-            this.dgvOwners.Size = new System.Drawing.Size(780, 480);
+            this.dgvOwners.Size = new System.Drawing.Size(750, 490);
             this.dgvOwners.TabIndex = 2;
             this.dgvOwners.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(38)))), ((int)(((byte)(50)))));
             this.dgvOwners.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -187,16 +193,15 @@
             // bottomBar
             // 
             this.bottomBar.BackColor = System.Drawing.Color.Transparent;
-            this.bottomBar.BorderRadius = 12;
             this.bottomBar.Controls.Add(this.lblPageInfo);
             this.bottomBar.Controls.Add(this.btnNextPage);
             this.bottomBar.Controls.Add(this.btnPrevPage);
             this.bottomBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.bottomBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.bottomBar.Location = new System.Drawing.Point(0, 550);
             this.bottomBar.Name = "bottomBar";
             this.bottomBar.Padding = new System.Windows.Forms.Padding(15, 8, 15, 8);
-            this.bottomBar.Size = new System.Drawing.Size(780, 60);
+            this.bottomBar.Size = new System.Drawing.Size(750, 60);
             this.bottomBar.TabIndex = 1;
             // 
             // lblPageInfo
@@ -204,27 +209,26 @@
             this.lblPageInfo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblPageInfo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.lblPageInfo.ForeColor = System.Drawing.Color.White;
-            this.lblPageInfo.Location = new System.Drawing.Point(290, 17);
+            this.lblPageInfo.Location = new System.Drawing.Point(275, 17);
             this.lblPageInfo.Name = "lblPageInfo";
             this.lblPageInfo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblPageInfo.Size = new System.Drawing.Size(200, 25);
             this.lblPageInfo.TabIndex = 2;
             this.lblPageInfo.Text = "صفحة 1 من 1";
+            this.lblPageInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNextPage
             // 
-            this.btnNextPage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnNextPage.Animated = true;
             this.btnNextPage.BorderRadius = 8;
             this.btnNextPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNextPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNextPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnNextPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnNextPage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
             this.btnNextPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextPage.ForeColor = System.Drawing.Color.White;
-            this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnNextPage.Location = new System.Drawing.Point(15, 11);
+            this.btnNextPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnNextPage.Location = new System.Drawing.Point(15, 13);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(65, 36);
             this.btnNextPage.TabIndex = 1;
@@ -233,20 +237,18 @@
             // 
             // btnPrevPage
             // 
-            this.btnPrevPage.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnPrevPage.Animated = true;
             this.btnPrevPage.BorderRadius = 8;
             this.btnPrevPage.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnPrevPage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnPrevPage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnPrevPage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnPrevPage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
             this.btnPrevPage.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrevPage.ForeColor = System.Drawing.Color.White;
-            this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnPrevPage.Location = new System.Drawing.Point(86, 11);
+            this.btnPrevPage.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
+            this.btnPrevPage.Location = new System.Drawing.Point(86, 13);
             this.btnPrevPage.Name = "btnPrevPage";
-            this.btnPrevPage.Size = new System.Drawing.Size(64, 36);
+            this.btnPrevPage.Size = new System.Drawing.Size(59, 36);
             this.btnPrevPage.TabIndex = 0;
             this.btnPrevPage.Text = " →";
             this.btnPrevPage.Click += new System.EventHandler(this.btnPrevPage_Click);
@@ -260,11 +262,11 @@
             this.topBar.Controls.Add(this.btnAdd);
             this.topBar.Controls.Add(this.lblTotalOwners);
             this.topBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(35)))));
+            this.topBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
             this.topBar.Location = new System.Drawing.Point(0, 0);
             this.topBar.Name = "topBar";
             this.topBar.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.topBar.Size = new System.Drawing.Size(780, 70);
+            this.topBar.Size = new System.Drawing.Size(750, 60);
             this.topBar.TabIndex = 0;
             // 
             // btnDelete
@@ -275,11 +277,11 @@
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
+            this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(40)))), ((int)(((byte)(55)))));
-            this.btnDelete.Location = new System.Drawing.Point(15, 17);
+            this.btnDelete.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnDelete.Location = new System.Drawing.Point(15, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(95, 36);
             this.btnDelete.TabIndex = 4;
@@ -298,7 +300,7 @@
             this.btnEdit.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnEdit.Location = new System.Drawing.Point(116, 17);
+            this.btnEdit.Location = new System.Drawing.Point(116, 12);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(95, 36);
             this.btnEdit.TabIndex = 3;
@@ -317,7 +319,7 @@
             this.btnView.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnView.ForeColor = System.Drawing.Color.White;
             this.btnView.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnView.Location = new System.Drawing.Point(217, 17);
+            this.btnView.Location = new System.Drawing.Point(217, 12);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(95, 36);
             this.btnView.TabIndex = 2;
@@ -335,25 +337,25 @@
             this.btnAdd.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnAdd.Location = new System.Drawing.Point(318, 17);
+            this.btnAdd.Location = new System.Drawing.Point(318, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 36);
+            this.btnAdd.Size = new System.Drawing.Size(130, 36);
             this.btnAdd.TabIndex = 1;
-            this.btnAdd.Text = "+ إضافة مالك جديد";
+            this.btnAdd.Text = "+ إضافة عميل";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblTotalOwners
             // 
             this.lblTotalOwners.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTotalOwners.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTotalOwners.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.lblTotalOwners.ForeColor = System.Drawing.Color.White;
-            this.lblTotalOwners.Location = new System.Drawing.Point(500, 20);
+            this.lblTotalOwners.Location = new System.Drawing.Point(550, 17);
             this.lblTotalOwners.Name = "lblTotalOwners";
             this.lblTotalOwners.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblTotalOwners.Size = new System.Drawing.Size(265, 30);
+            this.lblTotalOwners.Size = new System.Drawing.Size(185, 25);
             this.lblTotalOwners.TabIndex = 0;
-            this.lblTotalOwners.Text = "إجمالي الملاك: 0";
-            this.lblTotalOwners.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblTotalOwners.Text = "إجمالي العملاء: 0";
+            this.lblTotalOwners.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // sideFilterPanel
             // 
@@ -370,14 +372,16 @@
             this.sideFilterPanel.Controls.Add(this.lblFilterTitle);
             this.sideFilterPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.sideFilterPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(33)))), ((int)(((byte)(45)))));
-            this.sideFilterPanel.Location = new System.Drawing.Point(780, 0);
+            this.sideFilterPanel.Location = new System.Drawing.Point(770, 10);
             this.sideFilterPanel.Name = "sideFilterPanel";
             this.sideFilterPanel.Padding = new System.Windows.Forms.Padding(15);
-            this.sideFilterPanel.Size = new System.Drawing.Size(240, 610);
-            this.sideFilterPanel.TabIndex = 3;
+            this.sideFilterPanel.Size = new System.Drawing.Size(260, 610);
+            this.sideFilterPanel.TabIndex = 0;
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.Animated = true;
             this.btnRefresh.BorderRadius = 8;
             this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -388,23 +392,27 @@
             this.btnRefresh.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnRefresh.Location = new System.Drawing.Point(20, 310);
+            this.btnRefresh.Location = new System.Drawing.Point(15, 555);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(200, 45);
+            this.btnRefresh.Size = new System.Drawing.Size(230, 40);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "🔄 تحديث القائمة";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // guna2Separator1
             // 
+            this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.guna2Separator1.Location = new System.Drawing.Point(15, 275);
+            this.guna2Separator1.Location = new System.Drawing.Point(15, 235);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(210, 10);
+            this.guna2Separator1.Size = new System.Drawing.Size(230, 10);
             this.guna2Separator1.TabIndex = 6;
             // 
             // btnClearFilter
             // 
+            this.btnClearFilter.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClearFilter.Animated = true;
             this.btnClearFilter.BorderRadius = 8;
             this.btnClearFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -415,15 +423,16 @@
             this.btnClearFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
             this.btnClearFilter.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
-            this.btnClearFilter.Location = new System.Drawing.Point(20, 215);
+            this.btnClearFilter.Location = new System.Drawing.Point(15, 194);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(95, 38);
+            this.btnClearFilter.Size = new System.Drawing.Size(105, 35);
             this.btnClearFilter.TabIndex = 5;
-            this.btnClearFilter.Text = "مسح الفلتر";
+            this.btnClearFilter.Text = "مسح";
             this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
             // 
             // btnApplyFilter
             // 
+            this.btnApplyFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnApplyFilter.Animated = true;
             this.btnApplyFilter.BorderRadius = 8;
             this.btnApplyFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -433,14 +442,16 @@
             this.btnApplyFilter.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnApplyFilter.ForeColor = System.Drawing.Color.White;
             this.btnApplyFilter.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(130)))), ((int)(((byte)(240)))));
-            this.btnApplyFilter.Location = new System.Drawing.Point(125, 215);
+            this.btnApplyFilter.Location = new System.Drawing.Point(130, 194);
             this.btnApplyFilter.Name = "btnApplyFilter";
-            this.btnApplyFilter.Size = new System.Drawing.Size(95, 38);
+            this.btnApplyFilter.Size = new System.Drawing.Size(115, 35);
             this.btnApplyFilter.TabIndex = 4;
             this.btnApplyFilter.Text = "تطبيق الفلتر";
             // 
             // txtFilterPhone
             // 
+            this.txtFilterPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilterPhone.Animated = true;
             this.txtFilterPhone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.txtFilterPhone.BorderRadius = 8;
@@ -455,31 +466,34 @@
             this.txtFilterPhone.Font = new System.Drawing.Font("Arial", 9F);
             this.txtFilterPhone.ForeColor = System.Drawing.Color.White;
             this.txtFilterPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterPhone.Location = new System.Drawing.Point(20, 160);
+            this.txtFilterPhone.Location = new System.Drawing.Point(15, 145);
             this.txtFilterPhone.Name = "txtFilterPhone";
             this.txtFilterPhone.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.txtFilterPhone.PlaceholderText = "أدخل رقم الهاتف";
             this.txtFilterPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtFilterPhone.SelectedText = "";
-            this.txtFilterPhone.Size = new System.Drawing.Size(200, 38);
+            this.txtFilterPhone.Size = new System.Drawing.Size(230, 38);
             this.txtFilterPhone.TabIndex = 3;
             this.txtFilterPhone.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.label2.Location = new System.Drawing.Point(20, 140);
+            this.label2.Location = new System.Drawing.Point(15, 125);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(200, 17);
+            this.label2.Size = new System.Drawing.Size(230, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "رقم الهاتف:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtFilterName
             // 
+            this.txtFilterName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilterName.Animated = true;
             this.txtFilterName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(75)))));
             this.txtFilterName.BorderRadius = 8;
@@ -494,41 +508,43 @@
             this.txtFilterName.Font = new System.Drawing.Font("Arial", 9F);
             this.txtFilterName.ForeColor = System.Drawing.Color.White;
             this.txtFilterName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterName.Location = new System.Drawing.Point(20, 95);
+            this.txtFilterName.Location = new System.Drawing.Point(15, 75);
             this.txtFilterName.Name = "txtFilterName";
             this.txtFilterName.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.txtFilterName.PlaceholderText = "أدخل الاسم";
             this.txtFilterName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtFilterName.SelectedText = "";
-            this.txtFilterName.Size = new System.Drawing.Size(200, 38);
+            this.txtFilterName.Size = new System.Drawing.Size(230, 38);
             this.txtFilterName.TabIndex = 1;
             this.txtFilterName.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.label1.Location = new System.Drawing.Point(20, 75);
+            this.label1.Location = new System.Drawing.Point(15, 55);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(200, 17);
+            this.label1.Size = new System.Drawing.Size(230, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "اسم المالك:";
+            this.label1.Text = "اسم العميل:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblFilterTitle
             // 
+            this.lblFilterTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblFilterTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblFilterTitle.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.lblFilterTitle.ForeColor = System.Drawing.Color.White;
-            this.lblFilterTitle.Location = new System.Drawing.Point(20, 20);
+            this.lblFilterTitle.Location = new System.Drawing.Point(15, 15);
             this.lblFilterTitle.Name = "lblFilterTitle";
             this.lblFilterTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblFilterTitle.Size = new System.Drawing.Size(200, 30);
+            this.lblFilterTitle.Size = new System.Drawing.Size(230, 30);
             this.lblFilterTitle.TabIndex = 0;
             this.lblFilterTitle.Text = "🔍 البحث والفلترة";
-            this.lblFilterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblFilterTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmOwners
             // 
@@ -542,7 +558,7 @@
             this.Name = "frmOwners";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
-            this.Text = "إدارة الملاك";
+            this.Text = "إدارة العملاء";
             this.Load += new System.EventHandler(this.frmOwners_Load);
             this.mainContainer.ResumeLayout(false);
             this.contentArea.ResumeLayout(false);

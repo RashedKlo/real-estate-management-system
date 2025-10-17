@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.Charts.WinForms, Version=1.1.0.0, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.Charts.WinForms.1.1.0\lib\net472\Guna.Charts.WinForms.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -152,6 +155,18 @@
     <Compile Include="Login\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Main\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OwnersManagement\frmSearchOwner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OwnersManagement\frmSearchOwner.Designer.cs">
+      <DependentUpon>frmSearchOwner.cs</DependentUpon>
+    </Compile>
     <Compile Include="PropertiesManagement\frmAddEditProperty.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +245,9 @@
     <EmbeddedResource Include="Login\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,8 +257,17 @@
     <EmbeddedResource Include="OwnersManagement\frmOwners.resx">
       <DependentUpon>frmOwners.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OwnersManagement\frmSearchOwner.resx">
+      <DependentUpon>frmSearchOwner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesManagement\frmAddEditProperty.resx">
+      <DependentUpon>frmAddEditProperty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PropertiesManagement\frmPropertiesList.resx">
       <DependentUpon>frmPropertiesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertiesManagement\frmPropertyDetails.resx">
+      <DependentUpon>frmPropertyDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
